@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FINANCE_BUDGETS-001",
+  "name": "Budgets sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "SUBSCRIPTIONS_DUNNING-001",
+  "name": "Dunning sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INVENTORY_ITEM_CATEGORIES-001",
+  "name": "Item Categories sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "COMMERCE_CATALOG-001",
+  "name": "Catalog sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "MAINTENANCE_ASSETS-001",
+  "name": "Assets sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

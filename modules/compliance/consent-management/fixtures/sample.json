@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "COMPLIANCE_CONSENT_MANAGEMENT-001",
+  "name": "Consent Management sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

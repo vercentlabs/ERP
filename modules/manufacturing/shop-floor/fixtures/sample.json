@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "MANUFACTURING_SHOP_FLOOR-001",
+  "name": "Shop Floor sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

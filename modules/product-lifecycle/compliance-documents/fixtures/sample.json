@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PRODUCT_LIFECYCLE_COMPLIANCE_DOCUMENTS-001",
+  "name": "Compliance Documents sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

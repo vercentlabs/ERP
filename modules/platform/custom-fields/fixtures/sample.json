@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PLATFORM_CUSTOM_FIELDS-001",
+  "name": "Custom Fields sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

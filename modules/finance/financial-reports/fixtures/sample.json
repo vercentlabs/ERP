@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FINANCE_FINANCIAL_REPORTS-001",
+  "name": "Financial Reports sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

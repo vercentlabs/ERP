@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "LOGISTICS_CARRIERS-001",
+  "name": "Carriers sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

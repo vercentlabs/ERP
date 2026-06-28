@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INDUSTRY_PACKS_AUTOMOTIVE-001",
+  "name": "Automotive sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

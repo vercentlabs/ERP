@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INVENTORY_CYCLE_COUNTS-001",
+  "name": "Cycle Counts sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

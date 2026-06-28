@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "MASTER_DATA_ADDRESS_BOOK-001",
+  "name": "Address Book sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

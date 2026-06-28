@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INVENTORY_RESERVATIONS-001",
+  "name": "Reservations sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

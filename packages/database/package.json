@@ -1,0 +1,25 @@
+{
+  "name": "@vercent/database",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./knex": "./src/knex.ts",
+    "./migrations": "./src/migrations.ts",
+    "./tenantConnection": "./src/tenantConnection.ts",
+    "./transactions": "./src/transactions.ts"
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "knex": "^3.1.0",
+    "pg": "^8.12.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  }
+}

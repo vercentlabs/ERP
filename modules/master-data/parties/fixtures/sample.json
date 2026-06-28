@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "MASTER_DATA_PARTIES-001",
+  "name": "Parties sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

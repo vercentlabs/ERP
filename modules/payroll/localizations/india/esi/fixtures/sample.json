@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PAYROLL_LOCALIZATIONS_INDIA_ESI-001",
+  "name": "Localizations India Esi sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

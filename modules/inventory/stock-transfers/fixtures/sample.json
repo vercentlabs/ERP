@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INVENTORY_STOCK_TRANSFERS-001",
+  "name": "Stock Transfers sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

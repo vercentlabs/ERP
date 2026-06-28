@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PRODUCT_LIFECYCLE_LIFECYCLE_COSTING-001",
+  "name": "Lifecycle Costing sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

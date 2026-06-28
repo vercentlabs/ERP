@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "LOGISTICS_SHIPMENTS-001",
+  "name": "Shipments sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

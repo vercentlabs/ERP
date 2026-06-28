@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "COMMERCE_STOREFRONT-001",
+  "name": "Storefront sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

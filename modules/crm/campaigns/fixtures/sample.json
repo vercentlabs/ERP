@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "CRM_CAMPAIGNS-001",
+  "name": "Campaigns sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

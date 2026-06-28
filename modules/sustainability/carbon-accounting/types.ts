@@ -1,0 +1,38 @@
+import type { ActorContext, DocumentStatus, ErpRecord, PageRequest } from "@vercent/shared-types";
+
+export type CarbonAccountingRecord = ErpRecord<{
+  description?: string;
+  amount?: number;
+  priority: "low" | "medium" | "high" | "critical";
+  dueDate?: string;
+  source?: string;
+}>;
+
+export type CarbonAccountingCreateInput = {
+  tenantId: string;
+  companyId?: string;
+  branchId?: string;
+  code: string;
+  name: string;
+  description?: string;
+  amount?: number;
+  priority?: "low" | "medium" | "high" | "critical";
+  dueDate?: string;
+  ownerId?: string;
+  source?: string;
+  customFields?: Record<string, unknown>;
+};
+
+export type CarbonAccountingUpdateInput = Partial<Omit<CarbonAccountingCreateInput, "tenantId" | "code">>;
+
+export type CarbonAccountingListRequest = PageRequest & {
+  tenantId: string;
+  ownerId?: string;
+  priority?: CarbonAccountingRecord["priority"];
+};
+
+export type CarbonAccountingActionContext = ActorContext & {
+  reason?: string;
+};
+
+export type CarbonAccountingStatus = DocumentStatus;

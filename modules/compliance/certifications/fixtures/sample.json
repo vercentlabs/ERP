@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "COMPLIANCE_CERTIFICATIONS-001",
+  "name": "Certifications sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

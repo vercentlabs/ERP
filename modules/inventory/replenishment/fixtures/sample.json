@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INVENTORY_REPLENISHMENT-001",
+  "name": "Replenishment sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

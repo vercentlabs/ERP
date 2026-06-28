@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "ENTERPRISE_PERFORMANCE_PLANNING-001",
+  "name": "Planning sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

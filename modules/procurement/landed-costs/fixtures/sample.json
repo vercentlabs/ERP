@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PROCUREMENT_LANDED_COSTS-001",
+  "name": "Landed Costs sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

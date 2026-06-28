@@ -1,0 +1,9 @@
+export const dispatchRejectWorkflow = {
+  module: "field-service/dispatch",
+  action: "reject",
+  requiresAudit: true,
+  ownerVisible: true,
+  describe(recordId: string) {
+    return `Reject workflow for field-service/dispatch record ${recordId}`;
+  },
+};

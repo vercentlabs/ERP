@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "MANUFACTURING_PRODUCTION_COSTING-001",
+  "name": "Production Costing sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FINANCE_BANK_ACCOUNTS-001",
+  "name": "Bank Accounts sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

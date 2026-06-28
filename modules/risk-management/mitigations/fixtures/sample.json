@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "RISK_MANAGEMENT_MITIGATIONS-001",
+  "name": "Mitigations sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

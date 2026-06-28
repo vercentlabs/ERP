@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "MASTER_DATA_DEDUPLICATION-001",
+  "name": "Deduplication sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

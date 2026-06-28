@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "AI_DEMAND_FORECASTING-001",
+  "name": "Demand Forecasting sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

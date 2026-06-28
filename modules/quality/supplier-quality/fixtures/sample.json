@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "QUALITY_SUPPLIER_QUALITY-001",
+  "name": "Supplier Quality sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

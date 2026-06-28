@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "CRM_CUSTOMERS-001",
+  "name": "Customers sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

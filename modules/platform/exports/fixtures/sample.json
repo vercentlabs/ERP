@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PLATFORM_EXPORTS-001",
+  "name": "Exports sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

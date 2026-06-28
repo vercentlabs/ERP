@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FINANCE_PERIOD_CLOSE-001",
+  "name": "Period Close sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

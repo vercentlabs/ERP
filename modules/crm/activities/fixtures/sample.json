@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "CRM_ACTIVITIES-001",
+  "name": "Activities sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

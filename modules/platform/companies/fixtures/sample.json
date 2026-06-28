@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PLATFORM_COMPANIES-001",
+  "name": "Companies sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

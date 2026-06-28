@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INDUSTRY_PACKS_EDUCATION-001",
+  "name": "Education sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

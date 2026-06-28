@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PAYROLL_LOCALIZATIONS_INDIA_TDS-001",
+  "name": "Localizations India Tds sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

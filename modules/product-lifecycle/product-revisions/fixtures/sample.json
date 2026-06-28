@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PRODUCT_LIFECYCLE_PRODUCT_REVISIONS-001",
+  "name": "Product Revisions sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

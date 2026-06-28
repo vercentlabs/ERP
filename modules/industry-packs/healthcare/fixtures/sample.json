@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INDUSTRY_PACKS_HEALTHCARE-001",
+  "name": "Healthcare sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

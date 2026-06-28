@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "AI_ANOMALY_DETECTION-001",
+  "name": "Anomaly Detection sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

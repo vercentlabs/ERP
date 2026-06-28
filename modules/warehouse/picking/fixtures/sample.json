@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "WAREHOUSE_PICKING-001",
+  "name": "Picking sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

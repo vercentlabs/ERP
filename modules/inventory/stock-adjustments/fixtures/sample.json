@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INVENTORY_STOCK_ADJUSTMENTS-001",
+  "name": "Stock Adjustments sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

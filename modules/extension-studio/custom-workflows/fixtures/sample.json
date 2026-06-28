@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "EXTENSION_STUDIO_CUSTOM_WORKFLOWS-001",
+  "name": "Custom Workflows sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

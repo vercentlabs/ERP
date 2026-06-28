@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "AI_CASH_FLOW_FORECASTING-001",
+  "name": "Cash Flow Forecasting sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

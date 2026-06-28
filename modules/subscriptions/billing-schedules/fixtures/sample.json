@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "SUBSCRIPTIONS_BILLING_SCHEDULES-001",
+  "name": "Billing Schedules sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

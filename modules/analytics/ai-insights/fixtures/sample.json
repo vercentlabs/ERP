@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "ANALYTICS_AI_INSIGHTS-001",
+  "name": "Ai Insights sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

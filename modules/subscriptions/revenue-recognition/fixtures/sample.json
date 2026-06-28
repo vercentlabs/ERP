@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "SUBSCRIPTIONS_REVENUE_RECOGNITION-001",
+  "name": "Revenue Recognition sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

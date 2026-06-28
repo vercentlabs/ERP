@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "WAREHOUSE_PACKING-001",
+  "name": "Packing sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

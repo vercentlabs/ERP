@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PAYROLL_TAX_DECLARATIONS-001",
+  "name": "Tax Declarations sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

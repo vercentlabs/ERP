@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "ENTERPRISE_PERFORMANCE_BUDGETING-001",
+  "name": "Budgeting sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

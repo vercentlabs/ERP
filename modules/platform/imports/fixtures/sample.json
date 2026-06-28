@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PLATFORM_IMPORTS-001",
+  "name": "Imports sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

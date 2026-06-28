@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "EXTENSION_STUDIO_APP_BUILDER-001",
+  "name": "App Builder sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

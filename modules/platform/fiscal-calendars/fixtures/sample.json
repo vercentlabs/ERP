@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PLATFORM_FISCAL_CALENDARS-001",
+  "name": "Fiscal Calendars sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

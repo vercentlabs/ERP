@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "CRM_LEAD_SCORING-001",
+  "name": "Lead Scoring sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

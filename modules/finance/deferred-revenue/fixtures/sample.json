@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FINANCE_DEFERRED_REVENUE-001",
+  "name": "Deferred Revenue sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

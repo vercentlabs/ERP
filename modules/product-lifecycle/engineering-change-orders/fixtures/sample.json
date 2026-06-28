@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PRODUCT_LIFECYCLE_ENGINEERING_CHANGE_ORDERS-001",
+  "name": "Engineering Change Orders sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

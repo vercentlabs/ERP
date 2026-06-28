@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INDUSTRY_PACKS_WHOLESALE_DISTRIBUTION-001",
+  "name": "Wholesale Distribution sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

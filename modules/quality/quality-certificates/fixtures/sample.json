@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "QUALITY_QUALITY_CERTIFICATES-001",
+  "name": "Quality Certificates sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

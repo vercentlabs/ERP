@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "SUSTAINABILITY_COMPLIANCE_DISCLOSURES-001",
+  "name": "Compliance Disclosures sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

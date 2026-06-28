@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "CRM_CONTACTS-001",
+  "name": "Contacts sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "MANUFACTURING_MANUFACTURING_ANALYTICS-001",
+  "name": "Manufacturing Analytics sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

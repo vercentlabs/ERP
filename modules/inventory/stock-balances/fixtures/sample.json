@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INVENTORY_STOCK_BALANCES-001",
+  "name": "Stock Balances sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

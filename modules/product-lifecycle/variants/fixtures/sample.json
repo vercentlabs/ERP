@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PRODUCT_LIFECYCLE_VARIANTS-001",
+  "name": "Variants sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

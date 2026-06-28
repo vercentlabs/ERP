@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "HELPDESK_RETURNS_REPAIRS-001",
+  "name": "Returns Repairs sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

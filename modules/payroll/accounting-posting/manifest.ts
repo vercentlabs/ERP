@@ -1,0 +1,11 @@
+export const manifest = {
+  domain: "payroll",
+  module: "accounting-posting",
+  displayName: "Accounting Posting",
+  routeBase: "/api/payroll/accounting-posting",
+  table: "payroll_accounting_posting",
+  tenantScoped: true,
+  ownerFocused: true,
+  capabilities: ["read", "create", "update", "submit", "approve", "reject", "cancel", "close", "report"],
+  aiUseCases: ["summarize", "recommend-next-action", "detect-risk"],
+} as const;

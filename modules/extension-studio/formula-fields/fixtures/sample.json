@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "EXTENSION_STUDIO_FORMULA_FIELDS-001",
+  "name": "Formula Fields sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

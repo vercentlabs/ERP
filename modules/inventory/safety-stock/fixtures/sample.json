@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INVENTORY_SAFETY_STOCK-001",
+  "name": "Safety Stock sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

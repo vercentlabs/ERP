@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: vercent-worker-deployment
+  namespace: vercent
+data:
+  component: "worker-deployment"
+  managed-by: "vercent-platform"

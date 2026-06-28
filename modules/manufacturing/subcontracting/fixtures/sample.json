@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "MANUFACTURING_SUBCONTRACTING-001",
+  "name": "Subcontracting sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "DATA_PLATFORM_EVENT_STREAMS-001",
+  "name": "Event Streams sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

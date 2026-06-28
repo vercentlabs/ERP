@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "QUALITY_INSPECTION_PLANS-001",
+  "name": "Inspection Plans sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

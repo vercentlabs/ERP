@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PAYROLL_ACCOUNTING_POSTING-001",
+  "name": "Accounting Posting sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

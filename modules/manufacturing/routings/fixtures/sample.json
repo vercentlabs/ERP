@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "MANUFACTURING_ROUTINGS-001",
+  "name": "Routings sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

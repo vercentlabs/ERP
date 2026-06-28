@@ -1,0 +1,22 @@
+{
+  "name": "@vercent/workflows",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./approvalMatrix": "./src/approvalMatrix.ts",
+    "./ruleEvaluator": "./src/ruleEvaluator.ts",
+    "./workflowDefinition": "./src/workflowDefinition.ts",
+    "./workflowRuntime": "./src/workflowRuntime.ts"
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  }
+}

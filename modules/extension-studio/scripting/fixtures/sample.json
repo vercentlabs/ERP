@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "EXTENSION_STUDIO_SCRIPTING-001",
+  "name": "Scripting sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

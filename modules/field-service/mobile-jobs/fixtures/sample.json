@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FIELD_SERVICE_MOBILE_JOBS-001",
+  "name": "Mobile Jobs sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

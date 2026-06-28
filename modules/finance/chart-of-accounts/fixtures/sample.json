@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FINANCE_CHART_OF_ACCOUNTS-001",
+  "name": "Chart Of Accounts sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

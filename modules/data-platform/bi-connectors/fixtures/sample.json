@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "DATA_PLATFORM_BI_CONNECTORS-001",
+  "name": "Bi Connectors sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

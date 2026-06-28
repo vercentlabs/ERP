@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PAYROLL_PAYSLIPS-001",
+  "name": "Payslips sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

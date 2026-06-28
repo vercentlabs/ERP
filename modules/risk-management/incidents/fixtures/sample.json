@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "RISK_MANAGEMENT_INCIDENTS-001",
+  "name": "Incidents sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

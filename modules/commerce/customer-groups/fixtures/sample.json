@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "COMMERCE_CUSTOMER_GROUPS-001",
+  "name": "Customer Groups sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

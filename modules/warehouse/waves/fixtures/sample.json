@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "WAREHOUSE_WAVES-001",
+  "name": "Waves sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

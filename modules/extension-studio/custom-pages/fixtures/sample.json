@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "EXTENSION_STUDIO_CUSTOM_PAGES-001",
+  "name": "Custom Pages sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

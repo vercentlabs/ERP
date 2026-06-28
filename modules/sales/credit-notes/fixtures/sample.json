@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "SALES_CREDIT_NOTES-001",
+  "name": "Credit Notes sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

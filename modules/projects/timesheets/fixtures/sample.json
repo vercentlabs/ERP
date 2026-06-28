@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PROJECTS_TIMESHEETS-001",
+  "name": "Timesheets sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

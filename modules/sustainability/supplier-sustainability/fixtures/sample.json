@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "SUSTAINABILITY_SUPPLIER_SUSTAINABILITY-001",
+  "name": "Supplier Sustainability sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

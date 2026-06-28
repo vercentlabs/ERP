@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INDUSTRY_PACKS_NONPROFIT-001",
+  "name": "Nonprofit sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "LOGISTICS_FREIGHT_RATES-001",
+  "name": "Freight Rates sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

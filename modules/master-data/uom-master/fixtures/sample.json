@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "MASTER_DATA_UOM_MASTER-001",
+  "name": "Uom Master sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "HELPDESK_QUEUES-001",
+  "name": "Queues sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

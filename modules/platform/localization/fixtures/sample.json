@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PLATFORM_LOCALIZATION-001",
+  "name": "Localization sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

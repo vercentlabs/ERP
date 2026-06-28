@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PROCUREMENT_THREE_WAY_MATCH-001",
+  "name": "Three Way Match sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

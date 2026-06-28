@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "WAREHOUSE_BINS-001",
+  "name": "Bins sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

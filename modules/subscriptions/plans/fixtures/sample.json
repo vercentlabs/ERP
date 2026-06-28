@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "SUBSCRIPTIONS_PLANS-001",
+  "name": "Plans sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

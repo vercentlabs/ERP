@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INDUSTRY_PACKS_PROFESSIONAL_SERVICES-001",
+  "name": "Professional Services sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "COMMERCE_CARTS-001",
+  "name": "Carts sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

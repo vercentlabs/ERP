@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "ENTERPRISE_PERFORMANCE_MANAGEMENT_REPORTING-001",
+  "name": "Management Reporting sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

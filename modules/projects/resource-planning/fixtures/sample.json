@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PROJECTS_RESOURCE_PLANNING-001",
+  "name": "Resource Planning sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

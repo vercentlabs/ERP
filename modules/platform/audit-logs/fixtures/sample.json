@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PLATFORM_AUDIT_LOGS-001",
+  "name": "Audit Logs sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PROCUREMENT_SUPPLIER_QUOTATIONS-001",
+  "name": "Supplier Quotations sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

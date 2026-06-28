@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INVENTORY_SERIAL_BATCHES-001",
+  "name": "Serial Batches sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

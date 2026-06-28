@@ -1,0 +1,22 @@
+{
+  "name": "@vercent/permissions",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./abac": "./src/abac.ts",
+    "./rbac": "./src/rbac.ts",
+    "./permissionMatrix": "./src/permissionMatrix.ts",
+    "./policyEvaluator": "./src/policyEvaluator.ts"
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  }
+}

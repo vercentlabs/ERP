@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "ANALYTICS_SCHEDULED_REPORTS-001",
+  "name": "Scheduled Reports sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "ENTERPRISE_PERFORMANCE_BOARD_PACKS-001",
+  "name": "Board Packs sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

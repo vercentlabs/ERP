@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FINANCE_JOURNALS-001",
+  "name": "Journals sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

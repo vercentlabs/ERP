@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PAYROLL_LOANS_ADVANCES-001",
+  "name": "Loans Advances sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

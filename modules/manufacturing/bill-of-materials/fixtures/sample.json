@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "MANUFACTURING_BILL_OF_MATERIALS-001",
+  "name": "Bill Of Materials sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

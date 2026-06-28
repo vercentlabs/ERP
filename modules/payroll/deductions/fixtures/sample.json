@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PAYROLL_DEDUCTIONS-001",
+  "name": "Deductions sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

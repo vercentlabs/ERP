@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INDUSTRY_PACKS_FOOD_AND_BEVERAGE-001",
+  "name": "Food And Beverage sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

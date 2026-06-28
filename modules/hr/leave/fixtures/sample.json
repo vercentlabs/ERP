@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "HR_LEAVE-001",
+  "name": "Leave sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

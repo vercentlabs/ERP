@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PAYROLL_LOCALIZATIONS_INDIA_PF-001",
+  "name": "Localizations India Pf sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

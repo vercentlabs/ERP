@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PROCUREMENT_GOODS_RECEIPTS-001",
+  "name": "Goods Receipts sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

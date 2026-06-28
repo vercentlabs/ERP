@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "HR_ATTENDANCE-001",
+  "name": "Attendance sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

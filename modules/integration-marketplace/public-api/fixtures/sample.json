@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INTEGRATION_MARKETPLACE_PUBLIC_API-001",
+  "name": "Public Api sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "HR_LEARNING-001",
+  "name": "Learning sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "ES2022",
+      "DOM"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "paths": {
+      "@vercent/shared-types": [
+        "./packages/shared-types/src/index.ts"
+      ],
+      "@vercent/observability": [
+        "./packages/observability/src/index.ts"
+      ],
+      "@vercent/database/*": [
+        "./packages/database/src/*"
+      ],
+      "@vercent/permissions/*": [
+        "./packages/permissions/src/*"
+      ],
+      "@vercent/workflows/*": [
+        "./packages/workflows/src/*"
+      ]
+    }
+  }
+}

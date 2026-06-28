@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PROCUREMENT_PURCHASE_RETURNS-001",
+  "name": "Purchase Returns sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

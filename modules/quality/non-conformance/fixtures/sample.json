@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "QUALITY_NON_CONFORMANCE-001",
+  "name": "Non Conformance sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

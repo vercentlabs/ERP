@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "ANALYTICS_EMBEDDED_ANALYTICS-001",
+  "name": "Embedded Analytics sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

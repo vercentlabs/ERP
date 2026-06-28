@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FINANCE_ACCOUNTS_PAYABLE-001",
+  "name": "Accounts Payable sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PROCUREMENT_PURCHASE_REQUISITIONS-001",
+  "name": "Purchase Requisitions sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

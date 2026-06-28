@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PAYROLL_PAYROLL_RUNS-001",
+  "name": "Payroll Runs sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

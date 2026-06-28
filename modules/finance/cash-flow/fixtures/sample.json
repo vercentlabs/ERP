@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FINANCE_CASH_FLOW-001",
+  "name": "Cash Flow sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

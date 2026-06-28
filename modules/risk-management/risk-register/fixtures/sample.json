@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "RISK_MANAGEMENT_RISK_REGISTER-001",
+  "name": "Risk Register sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

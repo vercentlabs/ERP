@@ -1,0 +1,15 @@
+export const events = {
+  created: "sales.delivery_note.created",
+  createdFromOrder: "sales.delivery_note.created_from_order",
+  updated: "sales.delivery_note.updated",
+  deleted: "sales.delivery_note.deleted",
+  posted: "sales.delivery_note.posted",
+  cancelled: "sales.delivery_note.cancelled",
+  stockSalesIssued: "inventory.stock.sales_issued",
+  submitted: "sales.delivery_note.posted",
+  approved: "sales.delivery_note.posted",
+  rejected: "sales.delivery_note.cancelled",
+  closed: "sales.delivery_note.posted",
+  riskDetected: "sales.delivery_note.risk_detected",
+  nextActionRecommended: "sales.delivery_note.next_action_recommended",
+} as const;

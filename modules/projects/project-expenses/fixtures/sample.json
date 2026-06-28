@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PROJECTS_PROJECT_EXPENSES-001",
+  "name": "Project Expenses sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

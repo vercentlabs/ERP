@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PLATFORM_NOTIFICATIONS-001",
+  "name": "Notifications sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

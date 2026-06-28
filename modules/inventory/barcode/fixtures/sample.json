@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INVENTORY_BARCODE-001",
+  "name": "Barcode sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

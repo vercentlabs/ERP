@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INDUSTRY_PACKS_PROCESS_MANUFACTURING-001",
+  "name": "Process Manufacturing sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

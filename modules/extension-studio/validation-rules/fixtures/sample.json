@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "EXTENSION_STUDIO_VALIDATION_RULES-001",
+  "name": "Validation Rules sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "MANUFACTURING_CAPACITY_PLANNING-001",
+  "name": "Capacity Planning sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

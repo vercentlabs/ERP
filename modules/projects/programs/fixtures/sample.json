@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PROJECTS_PROGRAMS-001",
+  "name": "Programs sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

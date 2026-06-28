@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "MASTER_DATA_DATA_QUALITY-001",
+  "name": "Data Quality sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

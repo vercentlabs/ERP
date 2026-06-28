@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INTEGRATION_MARKETPLACE_SDK_MANAGEMENT-001",
+  "name": "Sdk Management sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

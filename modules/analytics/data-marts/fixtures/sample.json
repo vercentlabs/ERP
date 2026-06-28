@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "ANALYTICS_DATA_MARTS-001",
+  "name": "Data Marts sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FINANCE_SUB_LEDGERS-001",
+  "name": "Sub Ledgers sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

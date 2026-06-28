@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "HELPDESK_SERVICE_CONTRACTS-001",
+  "name": "Service Contracts sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INVENTORY_UNITS_OF_MEASURE-001",
+  "name": "Units Of Measure sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

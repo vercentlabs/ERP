@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "SALES_INVOICES-001",
+  "name": "Invoices sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

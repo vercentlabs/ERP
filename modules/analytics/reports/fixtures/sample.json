@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "ANALYTICS_REPORTS-001",
+  "name": "Reports sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: vercent-kustomization
+  namespace: vercent
+data:
+  component: "kustomization"
+  managed-by: "vercent-platform"

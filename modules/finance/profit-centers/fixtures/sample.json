@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FINANCE_PROFIT_CENTERS-001",
+  "name": "Profit Centers sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

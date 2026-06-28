@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "SALES_SALES_TARGETS-001",
+  "name": "Sales Targets sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

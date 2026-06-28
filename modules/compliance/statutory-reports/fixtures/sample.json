@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "COMPLIANCE_STATUTORY_REPORTS-001",
+  "name": "Statutory Reports sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

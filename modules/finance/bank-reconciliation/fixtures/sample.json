@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FINANCE_BANK_RECONCILIATION-001",
+  "name": "Bank Reconciliation sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

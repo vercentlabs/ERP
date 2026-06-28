@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "WAREHOUSE_REPLENISHMENT_TASKS-001",
+  "name": "Replenishment Tasks sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

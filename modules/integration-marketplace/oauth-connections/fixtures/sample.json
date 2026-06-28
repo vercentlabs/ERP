@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INTEGRATION_MARKETPLACE_OAUTH_CONNECTIONS-001",
+  "name": "Oauth Connections sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PLATFORM_INTEGRATIONS-001",
+  "name": "Integrations sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

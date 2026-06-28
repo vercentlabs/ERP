@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FINANCE_ACCOUNTING_PERIODS-001",
+  "name": "Accounting Periods sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

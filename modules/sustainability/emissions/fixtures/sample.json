@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "SUSTAINABILITY_EMISSIONS-001",
+  "name": "Emissions sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

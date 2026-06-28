@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INTEGRATION_MARKETPLACE_DEVELOPER_PORTAL-001",
+  "name": "Developer Portal sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "DATA_PLATFORM_DATA_LAKE-001",
+  "name": "Data Lake sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

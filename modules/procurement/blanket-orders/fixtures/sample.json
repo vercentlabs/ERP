@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PROCUREMENT_BLANKET_ORDERS-001",
+  "name": "Blanket Orders sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

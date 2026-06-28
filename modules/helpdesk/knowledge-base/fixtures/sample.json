@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "HELPDESK_KNOWLEDGE_BASE-001",
+  "name": "Knowledge Base sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

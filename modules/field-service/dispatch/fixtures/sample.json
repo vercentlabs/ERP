@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FIELD_SERVICE_DISPATCH-001",
+  "name": "Dispatch sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

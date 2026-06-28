@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FINANCE_EXCHANGE_RATES-001",
+  "name": "Exchange Rates sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

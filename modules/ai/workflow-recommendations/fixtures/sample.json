@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "AI_WORKFLOW_RECOMMENDATIONS-001",
+  "name": "Workflow Recommendations sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

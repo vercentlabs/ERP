@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "MASTER_DATA_CURRENCY_MASTER-001",
+  "name": "Currency Master sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

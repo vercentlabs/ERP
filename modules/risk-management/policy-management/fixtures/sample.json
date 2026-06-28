@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "RISK_MANAGEMENT_POLICY_MANAGEMENT-001",
+  "name": "Policy Management sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

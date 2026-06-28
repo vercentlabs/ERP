@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INTEGRATION_MARKETPLACE_CONNECTORS-001",
+  "name": "Connectors sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

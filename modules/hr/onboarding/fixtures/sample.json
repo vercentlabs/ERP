@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "HR_ONBOARDING-001",
+  "name": "Onboarding sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

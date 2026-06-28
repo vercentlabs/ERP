@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FINANCE_COST_CENTERS-001",
+  "name": "Cost Centers sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

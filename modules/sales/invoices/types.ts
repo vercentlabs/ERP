@@ -1,0 +1,181 @@
+import type { ActorContext, BranchId, CompanyId, PageRequest, PageResult, TenantId, UserId } from "@vercent/shared-types";
+
+export const salesInvoiceStatuses = ["DRAFT", "ISSUED", "CANCELLED"] as const;
+export const salesInvoicePaymentStatuses = ["UNPAID", "PARTIALLY_PAID", "PAID"] as const;
+export const salesInvoiceAccountingStatuses = ["NOT_POSTED", "POSTED"] as const;
+export type SalesInvoiceStatus = (typeof salesInvoiceStatuses)[number];
+export type SalesInvoicePaymentStatus = (typeof salesInvoicePaymentStatuses)[number];
+export type SalesInvoiceAccountingStatus = (typeof salesInvoiceAccountingStatuses)[number];
+export type SalesInvoiceSortField = "created_at" | "updated_at" | "invoice_date" | "due_date" | "total_amount" | "amount_due";
+export type SortDirection = "asc" | "desc";
+
+export type SalesInvoiceLineRecord = {
+  id: string;
+  invoiceId: string;
+  salesOrderLineId?: string;
+  deliveryNoteLineId?: string;
+  lineNumber: number;
+  itemId: string;
+  itemName: string;
+  description?: string;
+  quantity: number;
+  uomId: string;
+  unitPrice: number;
+  discountPercent: number;
+  discountAmount: number;
+  taxableAmount: number;
+  taxRate: number;
+  taxAmount: number;
+  lineSubtotal: number;
+  lineTotal: number;
+  hsnSacCode?: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type SalesInvoiceRecord = {
+  id: string;
+  tenantId: TenantId;
+  companyId?: CompanyId;
+  branchId?: BranchId;
+  invoiceNumber: string;
+  customerId: string;
+  partyId?: string;
+  salesOrderId?: string;
+  deliveryNoteId?: string;
+  opportunityId?: string;
+  quotationId?: string;
+  invoiceDate: string;
+  dueDate?: string;
+  status: SalesInvoiceStatus;
+  paymentStatus: SalesInvoicePaymentStatus;
+  accountingStatus: SalesInvoiceAccountingStatus;
+  journalEntryId?: string;
+  accountingPostedAt?: string;
+  currency: string;
+  exchangeRate: number;
+  billingAddressId?: string;
+  shippingAddressId?: string;
+  placeOfSupply?: string;
+  gstTreatment?: string;
+  subtotalAmount: number;
+  discountAmount: number;
+  taxableAmount: number;
+  taxAmount: number;
+  totalAmount: number;
+  roundedTotalAmount?: number;
+  amountPaid: number;
+  creditedAmount: number;
+  debitedAmount: number;
+  amountDue: number;
+  terms?: string;
+  notes?: string;
+  ownerUserId?: UserId;
+  assignedTeamId?: string;
+  issuedAt?: string;
+  cancelledAt?: string;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt?: string;
+  lines: SalesInvoiceLineRecord[];
+};
+
+export type SalesInvoiceLineInput = {
+  salesOrderLineId?: string;
+  deliveryNoteLineId?: string;
+  itemId: string;
+  itemName?: string;
+  description?: string;
+  quantity: number;
+  uomId: string;
+  unitPrice: number;
+  discountPercent?: number;
+  taxRate?: number;
+  hsnSacCode?: string;
+};
+
+export type SalesInvoiceCreateInput = {
+  tenantId: TenantId;
+  companyId?: CompanyId;
+  branchId?: BranchId;
+  invoiceNumber?: string;
+  customerId: string;
+  partyId?: string;
+  salesOrderId?: string;
+  deliveryNoteId?: string;
+  opportunityId?: string;
+  quotationId?: string;
+  invoiceDate?: string;
+  dueDate?: string;
+  currency?: string;
+  exchangeRate?: number;
+  billingAddressId?: string;
+  shippingAddressId?: string;
+  placeOfSupply?: string;
+  gstTreatment?: string;
+  terms?: string;
+  notes?: string;
+  ownerUserId?: UserId;
+  assignedTeamId?: string;
+  lines: SalesInvoiceLineInput[];
+};
+
+export type SalesInvoiceUpdateInput = Partial<Omit<SalesInvoiceCreateInput, "tenantId" | "invoiceNumber" | "lines">> & {
+  lines?: SalesInvoiceLineInput[];
+};
+
+export type SalesInvoiceListRequest = Omit<PageRequest, "status"> & {
+  tenantId: TenantId;
+  companyId?: CompanyId;
+  branchId?: BranchId;
+  status?: SalesInvoiceStatus;
+  paymentStatus?: SalesInvoicePaymentStatus;
+  customerId?: string;
+  salesOrderId?: string;
+  deliveryNoteId?: string;
+  invoiceDateFrom?: string;
+  invoiceDateTo?: string;
+  dueDateFrom?: string;
+  dueDateTo?: string;
+  sortBy?: SalesInvoiceSortField;
+  sortDirection?: SortDirection;
+};
+
+export type CreateSalesInvoiceFromDeliveryNoteInput = { tenantId: TenantId; invoiceDate?: string; dueDate?: string; terms?: string; notes?: string };
+export type CreateSalesInvoiceFromSalesOrderInput = { tenantId: TenantId; invoiceDate?: string; dueDate?: string; terms?: string; notes?: string };
+export type IssueSalesInvoiceInput = { invoiceDate?: string };
+export type SalesInvoiceTotals = { subtotalAmount: number; discountAmount: number; taxableAmount: number; taxAmount: number; totalAmount: number; amountPaid: number; amountDue: number };
+export type SalesInvoiceStats = { total: number; draftValue: number; issuedValue: number; unpaidValue: number; overdueValue: number; byStatus: Record<SalesInvoiceStatus, { count: number; value: number }> };
+export type SalesInvoiceActionContext = ActorContext & { reason?: string };
+
+export type SalesInvoiceRepository = {
+  createSalesInvoice(input: SalesInvoiceCreateInput, lines: SalesInvoiceLineRecord[], totals: SalesInvoiceTotals, actorId?: string): Promise<SalesInvoiceRecord>;
+  createSalesInvoiceFromDeliveryNote(input: SalesInvoiceCreateInput, lines: SalesInvoiceLineRecord[], totals: SalesInvoiceTotals, actorId?: string): Promise<SalesInvoiceRecord>;
+  createSalesInvoiceFromSalesOrder(input: SalesInvoiceCreateInput, lines: SalesInvoiceLineRecord[], totals: SalesInvoiceTotals, actorId?: string): Promise<SalesInvoiceRecord>;
+  listSalesInvoices(request: SalesInvoiceListRequest): Promise<PageResult<SalesInvoiceRecord>>;
+  getSalesInvoiceById(tenantId: string, id: string): Promise<SalesInvoiceRecord | undefined>;
+  getSalesInvoiceByNumber(tenantId: string, invoiceNumber: string, companyId?: string): Promise<SalesInvoiceRecord | undefined>;
+  getSalesInvoicesBySalesOrder(tenantId: string, salesOrderId: string): Promise<SalesInvoiceRecord[]>;
+  getSalesInvoiceByDeliveryNote(tenantId: string, deliveryNoteId: string): Promise<SalesInvoiceRecord | undefined>;
+  updateSalesInvoice(tenantId: string, id: string, input: SalesInvoiceUpdateInput, lines: SalesInvoiceLineRecord[] | undefined, totals: SalesInvoiceTotals | undefined, actorId?: string): Promise<SalesInvoiceRecord | undefined>;
+  softDeleteSalesInvoice(tenantId: string, id: string, actorId?: string): Promise<SalesInvoiceRecord | undefined>;
+  issueSalesInvoice(tenantId: string, id: string, input: IssueSalesInvoiceInput, actorId?: string): Promise<SalesInvoiceRecord | undefined>;
+  cancelDraftSalesInvoice(tenantId: string, id: string, actorId?: string): Promise<SalesInvoiceRecord | undefined>;
+  postSalesInvoiceToAccounting(tenantId: string, id: string, journalEntryId: string, actorId?: string): Promise<SalesInvoiceRecord | undefined>;
+  applySalesInvoicePayment(tenantId: string, id: string, allocatedAmount: number, actorId?: string): Promise<SalesInvoiceRecord | undefined>;
+  applySalesInvoiceCredit(tenantId: string, id: string, creditedAmount: number, actorId?: string): Promise<SalesInvoiceRecord | undefined>;
+  applySalesInvoiceDebit(tenantId: string, id: string, debitedAmount: number, actorId?: string): Promise<SalesInvoiceRecord | undefined>;
+  getSalesInvoiceLines(tenantId: string, invoiceId: string): Promise<SalesInvoiceLineRecord[]>;
+  getSalesInvoiceAccountingStatus(tenantId: string, id: string): Promise<Pick<SalesInvoiceRecord, "id" | "tenantId" | "companyId" | "branchId" | "invoiceNumber" | "accountingStatus" | "journalEntryId" | "accountingPostedAt"> | undefined>;
+  getSalesInvoiceJournalEntry(tenantId: string, id: string): Promise<string | undefined>;
+  replaceDraftSalesInvoiceLines(tenantId: string, invoiceId: string, lines: SalesInvoiceLineRecord[]): Promise<SalesInvoiceLineRecord[]>;
+  getSalesInvoiceStats(tenantId: string, filters?: Pick<SalesInvoiceListRequest, "companyId" | "branchId">): Promise<SalesInvoiceStats>;
+  calculateSalesInvoiceTotals(lines: SalesInvoiceLineRecord[]): SalesInvoiceTotals;
+};
+
+export type InvoicesRecord = SalesInvoiceRecord;
+export type InvoicesCreateInput = SalesInvoiceCreateInput;
+export type InvoicesUpdateInput = SalesInvoiceUpdateInput;
+export type InvoicesListRequest = SalesInvoiceListRequest;
+export type InvoicesActionContext = SalesInvoiceActionContext;
+export type InvoicesStatus = SalesInvoiceStatus;

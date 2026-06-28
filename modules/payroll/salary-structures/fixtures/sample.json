@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PAYROLL_SALARY_STRUCTURES-001",
+  "name": "Salary Structures sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "AI_DOCUMENT_INTELLIGENCE-001",
+  "name": "Document Intelligence sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

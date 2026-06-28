@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FIELD_SERVICE_CUSTOMER_ASSETS-001",
+  "name": "Customer Assets sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

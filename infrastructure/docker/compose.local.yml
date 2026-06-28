@@ -1,0 +1,31 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: vercent-postgres-local
+    environment:
+      POSTGRES_USER: vercent
+      POSTGRES_PASSWORD: vercent
+      POSTGRES_DB: vercent_control_plane
+    ports:
+      - "${POSTGRES_HOST_PORT:-5433}:5432"
+    volumes:
+      - vercent_postgres_data:/var/lib/postgresql/data
+      - ./postgres-init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vercent -d vercent_control_plane"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  redis:
+    image: redis:7
+    container_name: vercent-redis-local
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  vercent_postgres_data:

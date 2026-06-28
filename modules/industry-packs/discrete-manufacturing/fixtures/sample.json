@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INDUSTRY_PACKS_DISCRETE_MANUFACTURING-001",
+  "name": "Discrete Manufacturing sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

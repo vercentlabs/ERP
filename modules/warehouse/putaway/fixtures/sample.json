@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "WAREHOUSE_PUTAWAY-001",
+  "name": "Putaway sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

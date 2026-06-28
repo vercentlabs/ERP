@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FIELD_SERVICE_SERVICE_WORK_ORDERS-001",
+  "name": "Service Work Orders sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

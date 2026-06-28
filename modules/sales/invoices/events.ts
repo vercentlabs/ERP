@@ -1,0 +1,16 @@
+export const events = {
+  created: "sales.invoice.created",
+  createdFromDeliveryNote: "sales.invoice.created_from_delivery_note",
+  createdFromSalesOrder: "sales.invoice.created_from_sales_order",
+  updated: "sales.invoice.updated",
+  deleted: "sales.invoice.deleted",
+  issued: "sales.invoice.issued",
+  cancelled: "sales.invoice.cancelled",
+  accountingPosted: "sales.invoice.accounting_posted",
+  submitted: "sales.invoice.issued",
+  approved: "sales.invoice.issued",
+  rejected: "sales.invoice.cancelled",
+  closed: "sales.invoice.issued",
+  riskDetected: "sales.invoice.risk_detected",
+  nextActionRecommended: "sales.invoice.next_action_recommended",
+} as const;

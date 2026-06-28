@@ -1,0 +1,11 @@
+export const erpAssistantSyncJob = {
+  name: "ai/erp-assistant.sync",
+  queue: "ai-erp-assistant",
+  async run(input: { tenantId: string; requestedBy?: string }) {
+    return {
+      ...input,
+      job: "sync",
+      completedAt: new Date().toISOString(),
+    };
+  },
+};

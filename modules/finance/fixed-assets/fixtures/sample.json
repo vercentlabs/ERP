@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FINANCE_FIXED_ASSETS-001",
+  "name": "Fixed Assets sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

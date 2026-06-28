@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FINANCE_CURRENCIES-001",
+  "name": "Currencies sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

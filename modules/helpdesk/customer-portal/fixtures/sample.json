@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "HELPDESK_CUSTOMER_PORTAL-001",
+  "name": "Customer Portal sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FIELD_SERVICE_SERVICE_PARTS-001",
+  "name": "Service Parts sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

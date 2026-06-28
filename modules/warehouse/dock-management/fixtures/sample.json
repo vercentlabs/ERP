@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "WAREHOUSE_DOCK_MANAGEMENT-001",
+  "name": "Dock Management sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

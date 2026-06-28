@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INTEGRATION_MARKETPLACE_INSTALLED_APPS-001",
+  "name": "Installed Apps sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

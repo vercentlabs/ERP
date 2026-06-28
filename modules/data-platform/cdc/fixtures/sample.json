@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "DATA_PLATFORM_CDC-001",
+  "name": "Cdc sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

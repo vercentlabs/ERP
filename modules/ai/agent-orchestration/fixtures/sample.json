@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "AI_AGENT_ORCHESTRATION-001",
+  "name": "Agent Orchestration sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

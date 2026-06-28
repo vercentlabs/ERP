@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PAYROLL_LOCALIZATIONS_INDIA_GRATUITY-001",
+  "name": "Localizations India Gratuity sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

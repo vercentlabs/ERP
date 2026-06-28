@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "EXTENSION_STUDIO_CUSTOM_DASHBOARDS-001",
+  "name": "Custom Dashboards sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

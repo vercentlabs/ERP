@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PLATFORM_WORKFLOW_APPROVALS-001",
+  "name": "Workflow Approvals sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

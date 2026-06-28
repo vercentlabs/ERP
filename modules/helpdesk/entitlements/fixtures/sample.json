@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "HELPDESK_ENTITLEMENTS-001",
+  "name": "Entitlements sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

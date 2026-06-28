@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PROJECTS_PROJECT_TEMPLATES-001",
+  "name": "Project Templates sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

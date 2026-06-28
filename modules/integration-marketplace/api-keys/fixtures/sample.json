@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INTEGRATION_MARKETPLACE_API_KEYS-001",
+  "name": "Api Keys sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

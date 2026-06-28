@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "SALES_RETURNS-001",
+  "name": "Returns sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

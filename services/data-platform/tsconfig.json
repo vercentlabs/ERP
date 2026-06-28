@@ -1,0 +1,38 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "../..",
+    "ignoreDeprecations": "5.0",
+    "paths": {
+      "@vercent/shared-types": [
+        "packages/shared-types/src/index.ts"
+      ],
+      "@vercent/observability": [
+        "packages/observability/src/index.ts"
+      ],
+      "@vercent/database/*": [
+        "packages/database/src/*"
+      ],
+      "@vercent/permissions/*": [
+        "packages/permissions/src/*"
+      ],
+      "@vercent/workflows/*": [
+        "packages/workflows/src/*"
+      ],
+      "@vercent/document-engine/*": [
+        "packages/document-engine/src/*"
+      ],
+      "@vercent/reporting-engine/*": [
+        "packages/reporting-engine/src/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "coverage"
+  ]
+}

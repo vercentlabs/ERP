@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "EXTENSION_STUDIO_CUSTOM_OBJECTS-001",
+  "name": "Custom Objects sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

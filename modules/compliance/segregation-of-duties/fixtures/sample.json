@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "COMPLIANCE_SEGREGATION_OF_DUTIES-001",
+  "name": "Segregation Of Duties sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

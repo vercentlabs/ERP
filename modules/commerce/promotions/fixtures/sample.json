@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "COMMERCE_PROMOTIONS-001",
+  "name": "Promotions sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

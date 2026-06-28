@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "SUBSCRIPTIONS_RENEWALS-001",
+  "name": "Renewals sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

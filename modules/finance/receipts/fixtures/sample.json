@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FINANCE_RECEIPTS-001",
+  "name": "Receipts sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

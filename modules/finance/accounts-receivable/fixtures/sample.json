@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FINANCE_ACCOUNTS_RECEIVABLE-001",
+  "name": "Accounts Receivable sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

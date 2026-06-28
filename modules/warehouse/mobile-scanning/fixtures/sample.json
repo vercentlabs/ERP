@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "WAREHOUSE_MOBILE_SCANNING-001",
+  "name": "Mobile Scanning sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

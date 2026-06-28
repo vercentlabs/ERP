@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "SALES_QUOTATIONS-001",
+  "name": "Quotations sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "SALES_COMMISSIONS-001",
+  "name": "Commissions sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

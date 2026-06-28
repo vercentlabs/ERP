@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FINANCE_GENERAL_LEDGER-001",
+  "name": "General Ledger sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "MAINTENANCE_SPARE_PARTS-001",
+  "name": "Spare Parts sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

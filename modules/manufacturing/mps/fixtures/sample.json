@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "MANUFACTURING_MPS-001",
+  "name": "Mps sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "HR_RECRUITMENT-001",
+  "name": "Recruitment sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

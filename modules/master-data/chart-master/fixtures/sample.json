@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "MASTER_DATA_CHART_MASTER-001",
+  "name": "Chart Master sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

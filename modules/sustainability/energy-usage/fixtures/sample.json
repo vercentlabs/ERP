@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "SUSTAINABILITY_ENERGY_USAGE-001",
+  "name": "Energy Usage sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PROCUREMENT_PROCUREMENT_POLICIES-001",
+  "name": "Procurement Policies sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

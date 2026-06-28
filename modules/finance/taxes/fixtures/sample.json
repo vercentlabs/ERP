@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FINANCE_TAXES-001",
+  "name": "Taxes sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

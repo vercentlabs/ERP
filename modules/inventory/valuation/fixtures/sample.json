@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INVENTORY_VALUATION-001",
+  "name": "Valuation sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "ANALYTICS_DASHBOARDS-001",
+  "name": "Dashboards sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "MANUFACTURING_WORK_CENTERS-001",
+  "name": "Work Centers sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

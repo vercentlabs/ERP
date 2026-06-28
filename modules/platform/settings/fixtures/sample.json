@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PLATFORM_SETTINGS-001",
+  "name": "Settings sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

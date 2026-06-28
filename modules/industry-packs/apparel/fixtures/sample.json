@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INDUSTRY_PACKS_APPAREL-001",
+  "name": "Apparel sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

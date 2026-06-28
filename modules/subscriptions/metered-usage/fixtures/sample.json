@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "SUBSCRIPTIONS_METERED_USAGE-001",
+  "name": "Metered Usage sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

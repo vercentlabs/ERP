@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PLATFORM_DOCUMENTS-001",
+  "name": "Documents sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

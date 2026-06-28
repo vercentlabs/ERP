@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PROCUREMENT_SUPPLIER_PORTAL-001",
+  "name": "Supplier Portal sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

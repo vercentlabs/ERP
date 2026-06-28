@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "AI_ERP_ASSISTANT-001",
+  "name": "Erp Assistant sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

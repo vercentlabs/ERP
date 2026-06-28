@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "HR_EXPENSES-001",
+  "name": "Expenses sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

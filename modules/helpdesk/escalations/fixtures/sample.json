@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "HELPDESK_ESCALATIONS-001",
+  "name": "Escalations sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

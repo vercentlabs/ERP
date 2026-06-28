@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "WAREHOUSE_SHIPPING-001",
+  "name": "Shipping sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

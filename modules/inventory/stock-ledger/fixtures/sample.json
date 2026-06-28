@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INVENTORY_STOCK_LEDGER-001",
+  "name": "Stock Ledger sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

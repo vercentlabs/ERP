@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PAYROLL_PAYROLL_PERIODS-001",
+  "name": "Payroll Periods sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

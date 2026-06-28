@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "MANUFACTURING_PRODUCTION_ORDERS-001",
+  "name": "Production Orders sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

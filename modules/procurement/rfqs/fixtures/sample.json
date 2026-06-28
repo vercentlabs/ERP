@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PROCUREMENT_RFQS-001",
+  "name": "Rfqs sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

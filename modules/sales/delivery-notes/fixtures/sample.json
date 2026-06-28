@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "SALES_DELIVERY_NOTES-001",
+  "name": "Delivery Notes sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

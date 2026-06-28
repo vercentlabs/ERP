@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PROJECTS_PROFITABILITY-001",
+  "name": "Profitability sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

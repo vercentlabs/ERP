@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INVENTORY_LOCATIONS-001",
+  "name": "Locations sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INDUSTRY_PACKS_CONSTRUCTION-001",
+  "name": "Construction sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

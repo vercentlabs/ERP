@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PLATFORM_NAMING_SERIES-001",
+  "name": "Naming Series sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

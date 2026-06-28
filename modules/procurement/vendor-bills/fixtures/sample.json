@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PROCUREMENT_VENDOR_BILLS-001",
+  "name": "Vendor Bills sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

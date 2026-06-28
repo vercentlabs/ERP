@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "HR_PERFORMANCE-001",
+  "name": "Performance sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

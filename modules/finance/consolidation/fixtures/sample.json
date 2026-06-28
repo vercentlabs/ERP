@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FINANCE_CONSOLIDATION-001",
+  "name": "Consolidation sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

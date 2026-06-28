@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "INVENTORY_DEMAND_PLANNING-001",
+  "name": "Demand Planning sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

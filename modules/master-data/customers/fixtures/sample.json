@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "MASTER_DATA_CUSTOMERS-001",
+  "name": "Customers sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

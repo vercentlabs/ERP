@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "SALES_DISCOUNTS-001",
+  "name": "Discounts sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

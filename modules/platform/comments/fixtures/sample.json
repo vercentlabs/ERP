@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PLATFORM_COMMENTS-001",
+  "name": "Comments sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

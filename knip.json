@@ -1,0 +1,15 @@
+{
+  "entry": [
+    "apps/*/src/**/*.{ts,tsx}",
+    "services/*/src/**/*.ts",
+    "packages/*/src/**/*.ts"
+  ],
+  "project": [
+    "**/*.{ts,tsx}"
+  ],
+  "ignore": [
+    "docs/**",
+    "database/**/*.sql",
+    "infrastructure/**"
+  ]
+}

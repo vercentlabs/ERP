@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "COMPLIANCE_DATA_RETENTION-001",
+  "name": "Data Retention sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

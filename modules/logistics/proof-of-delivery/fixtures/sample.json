@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "LOGISTICS_PROOF_OF_DELIVERY-001",
+  "name": "Proof Of Delivery sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

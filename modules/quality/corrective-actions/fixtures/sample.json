@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "QUALITY_CORRECTIVE_ACTIONS-001",
+  "name": "Corrective Actions sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

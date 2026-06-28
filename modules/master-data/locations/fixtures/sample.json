@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "MASTER_DATA_LOCATIONS-001",
+  "name": "Locations sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

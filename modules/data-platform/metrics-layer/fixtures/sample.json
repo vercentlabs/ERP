@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "DATA_PLATFORM_METRICS_LAYER-001",
+  "name": "Metrics Layer sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

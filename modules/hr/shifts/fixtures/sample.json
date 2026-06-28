@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "HR_SHIFTS-001",
+  "name": "Shifts sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

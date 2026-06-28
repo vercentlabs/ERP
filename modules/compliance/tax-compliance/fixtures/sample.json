@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "COMPLIANCE_TAX_COMPLIANCE-001",
+  "name": "Tax Compliance sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "WAREHOUSE_RECEIVING-001",
+  "name": "Receiving sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

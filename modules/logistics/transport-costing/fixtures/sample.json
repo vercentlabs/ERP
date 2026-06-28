@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "LOGISTICS_TRANSPORT_COSTING-001",
+  "name": "Transport Costing sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

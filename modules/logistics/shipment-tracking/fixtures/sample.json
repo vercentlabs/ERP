@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "LOGISTICS_SHIPMENT_TRACKING-001",
+  "name": "Shipment Tracking sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

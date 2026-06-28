@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "MAINTENANCE_PREVENTIVE_MAINTENANCE-001",
+  "name": "Preventive Maintenance sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

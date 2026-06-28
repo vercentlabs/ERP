@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: vercent-ingress
+  namespace: vercent
+data:
+  component: "ingress"
+  managed-by: "vercent-platform"

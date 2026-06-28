@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "HR_DEPARTMENTS-001",
+  "name": "Departments sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

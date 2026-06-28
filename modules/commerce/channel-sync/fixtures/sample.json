@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "COMMERCE_CHANNEL_SYNC-001",
+  "name": "Channel Sync sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

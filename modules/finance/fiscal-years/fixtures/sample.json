@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FINANCE_FISCAL_YEARS-001",
+  "name": "Fiscal Years sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "SUSTAINABILITY_CARBON_ACCOUNTING-001",
+  "name": "Carbon Accounting sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

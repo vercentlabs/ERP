@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "COMPLIANCE_CONTROLS-001",
+  "name": "Controls sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PROCUREMENT_SUPPLIER_SCORECARDS-001",
+  "name": "Supplier Scorecards sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "DATA_PLATFORM_DATA_WAREHOUSE-001",
+  "name": "Data Warehouse sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

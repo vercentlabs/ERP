@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "HR_EMPLOYMENT_CONTRACTS-001",
+  "name": "Employment Contracts sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

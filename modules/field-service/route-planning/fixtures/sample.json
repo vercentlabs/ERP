@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FIELD_SERVICE_ROUTE_PLANNING-001",
+  "name": "Route Planning sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

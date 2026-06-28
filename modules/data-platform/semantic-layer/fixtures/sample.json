@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "DATA_PLATFORM_SEMANTIC_LAYER-001",
+  "name": "Semantic Layer sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

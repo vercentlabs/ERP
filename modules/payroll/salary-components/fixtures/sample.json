@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PAYROLL_SALARY_COMPONENTS-001",
+  "name": "Salary Components sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

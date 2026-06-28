@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "QUALITY_QUALITY_INSPECTIONS-001",
+  "name": "Quality Inspections sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

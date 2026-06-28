@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "PAYROLL_BENEFITS-001",
+  "name": "Benefits sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

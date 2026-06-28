@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "RISK_MANAGEMENT_RISK_ASSESSMENTS-001",
+  "name": "Risk Assessments sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

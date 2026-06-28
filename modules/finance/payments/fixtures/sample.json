@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "FINANCE_PAYMENTS-001",
+  "name": "Payments sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

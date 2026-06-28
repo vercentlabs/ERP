@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "HELPDESK_SERVICE_ANALYTICS-001",
+  "name": "Service Analytics sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}

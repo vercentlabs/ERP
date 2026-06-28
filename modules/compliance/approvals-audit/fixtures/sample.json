@@ -1,0 +1,8 @@
+{
+  "tenantId": "demo-tenant",
+  "code": "COMPLIANCE_APPROVALS_AUDIT-001",
+  "name": "Approvals Audit sample",
+  "priority": "medium",
+  "source": "seed",
+  "customFields": {}
+}
