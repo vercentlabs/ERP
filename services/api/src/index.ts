@@ -14,6 +14,7 @@ import { creditNoteAllocationsService } from "../../../modules/sales/credit-note
 import { salesDebitNotesService } from "../../../modules/sales/debit-notes/service";
 import { inventoryStockService } from "../../../modules/inventory/stock-ledger/service";
 import { accountingService } from "../../../modules/finance/accounting/service";
+import { bankingService } from "../../../modules/finance/banking/service";
 import { customerReceiptsService } from "../../../modules/finance/customer-receipts/service";
 import { customerRefundsService } from "../../../modules/finance/customer-refunds/service";
 import { generalLedgerService } from "../../../modules/finance/general-ledger/service";
@@ -341,6 +342,48 @@ function customerRefundListInput(url: URL, tenantId: string) {
     refundDateTo: url.searchParams.get("refundDateTo") ?? undefined,
     postingDateFrom: url.searchParams.get("postingDateFrom") ?? undefined,
     postingDateTo: url.searchParams.get("postingDateTo") ?? undefined,
+    sortBy: url.searchParams.get("sortBy") ?? undefined,
+    sortDirection: url.searchParams.get("sortDirection") ?? undefined,
+  };
+}
+
+function bankAccountListInput(url: URL, tenantId: string) {
+  return {
+    tenantId,
+    page: url.searchParams.get("page") ?? undefined,
+    pageSize: url.searchParams.get("pageSize") ?? undefined,
+    search: url.searchParams.get("search") ?? undefined,
+    status: url.searchParams.get("status") ?? undefined,
+    accountType: url.searchParams.get("accountType") ?? undefined,
+    sortBy: url.searchParams.get("sortBy") ?? undefined,
+    sortDirection: url.searchParams.get("sortDirection") ?? undefined,
+  };
+}
+
+function cashBankLedgerInput(url: URL, tenantId: string) {
+  return {
+    tenantId,
+    page: url.searchParams.get("page") ?? undefined,
+    pageSize: url.searchParams.get("pageSize") ?? undefined,
+    bankAccountId: url.searchParams.get("bankAccountId") ?? undefined,
+    accountId: url.searchParams.get("accountId") ?? undefined,
+    dateFrom: url.searchParams.get("dateFrom") ?? undefined,
+    dateTo: url.searchParams.get("dateTo") ?? undefined,
+    referenceType: url.searchParams.get("referenceType") ?? undefined,
+    reconciled: url.searchParams.get("reconciled") ?? undefined,
+  };
+}
+
+function bankReconciliationListInput(url: URL, tenantId: string) {
+  return {
+    tenantId,
+    page: url.searchParams.get("page") ?? undefined,
+    pageSize: url.searchParams.get("pageSize") ?? undefined,
+    search: url.searchParams.get("search") ?? undefined,
+    status: url.searchParams.get("status") ?? undefined,
+    bankAccountId: url.searchParams.get("bankAccountId") ?? undefined,
+    dateFrom: url.searchParams.get("dateFrom") ?? undefined,
+    dateTo: url.searchParams.get("dateTo") ?? undefined,
     sortBy: url.searchParams.get("sortBy") ?? undefined,
     sortDirection: url.searchParams.get("sortDirection") ?? undefined,
   };
@@ -1201,6 +1244,123 @@ async function handleCustomerRefundsRequest(
   return false;
 }
 
+async function handleFinanceBankingRequest(
+  request: IncomingMessage,
+  response: ServerResponse,
+  url: URL,
+  tenantId: string,
+  service: typeof bankingService,
+) {
+  const context = actorContext(request, tenantId);
+  const segments = url.pathname.split("/").filter(Boolean);
+  const resource = segments[2];
+  const id = segments[3];
+  const action = segments[4];
+  const nestedId = segments[5];
+  const nestedAction = segments[6];
+
+  if (resource === "bank-accounts") {
+    if (!id && request.method === "GET") {
+      json(response, 200, await service.listBankAccounts(bankAccountListInput(url, tenantId), context));
+      return true;
+    }
+    if (!id && request.method === "POST") {
+      json(response, 201, await service.createBankAccount({ tenantId, ...(await readJson(request)) }, context));
+      return true;
+    }
+    if (id && request.method === "GET" && !action) {
+      json(response, 200, await service.getBankAccountById(tenantId, id, context));
+      return true;
+    }
+    if (id && request.method === "PATCH" && !action) {
+      json(response, 200, await service.updateBankAccount(tenantId, id, await readJson(request), context));
+      return true;
+    }
+    if (id && request.method === "DELETE" && !action) {
+      json(response, 200, await service.softDeleteBankAccount(tenantId, id, context));
+      return true;
+    }
+    if (id && request.method === "POST" && action === "default") {
+      json(response, 200, await service.setDefaultBankAccount(tenantId, id, context));
+      return true;
+    }
+    if (id && request.method === "GET" && action === "ledger") {
+      json(response, 200, await service.getBankAccountLedger(tenantId, id, cashBankLedgerInput(url, tenantId), context));
+      return true;
+    }
+    if (id && request.method === "GET" && action === "unreconciled-lines") {
+      json(response, 200, await service.getUnreconciledJournalLines(tenantId, id, cashBankLedgerInput(url, tenantId), context));
+      return true;
+    }
+  }
+
+  if (resource === "cash-bank-ledger" && request.method === "GET") {
+    json(response, 200, await service.getCashBankLedger(cashBankLedgerInput(url, tenantId), context));
+    return true;
+  }
+  if (resource === "cash-bank-summary" && request.method === "GET") {
+    json(response, 200, await service.getCashBankSummary(cashBankLedgerInput(url, tenantId), context));
+    return true;
+  }
+
+  if (resource === "bank-reconciliations") {
+    if (id === "stats" && request.method === "GET") {
+      json(response, 200, await service.getBankReconciliationStats(bankReconciliationListInput(url, tenantId), context));
+      return true;
+    }
+    if (!id && request.method === "GET") {
+      json(response, 200, await service.listBankReconciliations(bankReconciliationListInput(url, tenantId), context));
+      return true;
+    }
+    if (!id && request.method === "POST") {
+      json(response, 201, await service.createBankReconciliation({ tenantId, ...(await readJson(request)) }, context));
+      return true;
+    }
+    if (id && request.method === "GET" && !action) {
+      json(response, 200, await service.getBankReconciliationById(tenantId, id, context));
+      return true;
+    }
+    if (id && request.method === "PATCH" && !action) {
+      json(response, 200, await service.updateDraftBankReconciliation(tenantId, id, await readJson(request), context));
+      return true;
+    }
+    if (id && request.method === "DELETE" && !action) {
+      json(response, 200, await service.softDeleteDraftBankReconciliation(tenantId, id, context));
+      return true;
+    }
+    if (id && request.method === "POST" && action === "cancel") {
+      json(response, 200, await service.cancelDraftBankReconciliation(tenantId, id, await readJson(request), context));
+      return true;
+    }
+    if (id && request.method === "POST" && action === "complete") {
+      json(response, 200, await service.completeBankReconciliation(tenantId, id, await readJson(request), context));
+      return true;
+    }
+    if (id && action === "lines" && !nestedId && request.method === "GET") {
+      json(response, 200, await service.getBankReconciliationLines(tenantId, id, context));
+      return true;
+    }
+    if (id && action === "lines" && !nestedId && request.method === "POST") {
+      json(response, 201, await service.addBankReconciliationLine(tenantId, id, await readJson(request), context));
+      return true;
+    }
+    if (id && action === "lines" && !nestedId && request.method === "PUT") {
+      json(response, 200, await service.replaceBankReconciliationLines(tenantId, id, await readJson(request), context));
+      return true;
+    }
+    if (id && action === "lines" && nestedId && nestedAction === "match" && request.method === "POST") {
+      json(response, 200, await service.matchBankStatementLine(tenantId, id, nestedId, await readJson(request), context));
+      return true;
+    }
+    if (id && action === "lines" && nestedId && nestedAction === "unmatch" && request.method === "POST") {
+      json(response, 200, await service.unmatchBankStatementLine(tenantId, id, nestedId, context));
+      return true;
+    }
+  }
+
+  return false;
+}
+
 async function handleFinanceAccountingRequest(
   request: IncomingMessage,
   response: ServerResponse,
@@ -1443,6 +1603,7 @@ export function createApiService(
     customerRefunds?: typeof customerRefundsService;
     inventoryStock?: typeof inventoryStockService;
     accounting?: typeof accountingService;
+    banking?: typeof bankingService;
   } = {},
 ) {
   const leadService = options.leads ?? leadsService;
@@ -1459,6 +1620,7 @@ export function createApiService(
   const customerRefundService = options.customerRefunds ?? customerRefundsService;
   const inventoryService = options.inventoryStock ?? inventoryStockService;
   const financeAccountingService = options.accounting ?? accountingService;
+  const financeBankingService = options.banking ?? bankingService;
 
   return createServer(async (request, response) => {
     try {
@@ -1548,6 +1710,10 @@ export function createApiService(
 
       if (url.pathname === "/api/finance/customer-refunds" || url.pathname.startsWith("/api/finance/customer-refunds/")) {
         if (await handleCustomerRefundsRequest(request, response, url, tenantId, customerRefundService)) return;
+      }
+
+      if (url.pathname === "/api/finance/bank-accounts" || url.pathname.startsWith("/api/finance/bank-accounts/") || url.pathname === "/api/finance/cash-bank-ledger" || url.pathname === "/api/finance/cash-bank-summary" || url.pathname === "/api/finance/bank-reconciliations" || url.pathname.startsWith("/api/finance/bank-reconciliations/")) {
+        if (await handleFinanceBankingRequest(request, response, url, tenantId, financeBankingService)) return;
       }
 
       if (url.pathname === "/api/finance/accounting/settings" || url.pathname === "/api/finance/account-groups" || url.pathname.startsWith("/api/finance/account-groups/") || url.pathname === "/api/finance/accounts" || url.pathname.startsWith("/api/finance/accounts/") || url.pathname === "/api/finance/fiscal-years" || url.pathname.startsWith("/api/finance/fiscal-years/") || url.pathname === "/api/finance/journal-entries" || url.pathname.startsWith("/api/finance/journal-entries/") || url.pathname === "/api/finance/reports/trial-balance") {

@@ -1,0 +1,19 @@
+import Link from "next/link";
+import { ModuleHeader } from "../../../../components/layout/ModuleHeader";
+import { addBankReconciliationLineAction, cancelBankReconciliationAction, completeBankReconciliationAction, matchBankReconciliationLineAction, unmatchBankReconciliationLineAction } from "../../../../features/finance/banking/actions";
+import { getBankReconciliation, getUnreconciledJournalLines } from "../../../../features/finance/banking/api";
+
+export default async function BankReconciliationDetailPage({ params }: { params: { id: string } }) {
+  const reconciliation = await getBankReconciliation(params.id);
+  const candidates = reconciliation.status === "DRAFT" ? await getUnreconciledJournalLines(reconciliation.bankAccountId, { pageSize: "50" }) : { rows: [] };
+  return (
+    <main className="page-shell">
+      <ModuleHeader title={reconciliation.reconciliationNumber} eyebrow="Bank Reconciliation" description="Manual reconciliation against posted cash/bank journal lines. Automatic bank feeds are not implemented yet." actions={<><Link className="vercent-button secondary" href={`/finance/bank-reconciliations/${reconciliation.id}/edit`}>Edit</Link>{reconciliation.status === "DRAFT" ? <><form action={completeBankReconciliationAction.bind(null, reconciliation.id)}><button className="vercent-button" type="submit">Complete</button></form><form action={cancelBankReconciliationAction.bind(null, reconciliation.id)}><button className="vercent-button secondary" type="submit">Cancel</button></form></> : null}</>} />
+      <section className="vercent-metrics"><article><span>Status</span><strong>{reconciliation.status}</strong></article><article><span>System closing</span><strong>{reconciliation.systemClosingBalance.toLocaleString("en-IN")}</strong></article><article><span>Statement closing</span><strong>{reconciliation.closingStatementBalance.toLocaleString("en-IN")}</strong></article><article><span>Difference</span><strong>{reconciliation.differenceAmount.toLocaleString("en-IN")}</strong></article></section>
+      {reconciliation.status === "DRAFT" ? <form className="vercent-toolbar" action={addBankReconciliationLineAction.bind(null, reconciliation.id)}><input name="transactionDate" type="date" required /><input name="description" placeholder="Description" required /><input name="referenceNumber" placeholder="Reference" /><input name="debitAmount" type="number" step="0.01" defaultValue="0" /><input name="creditAmount" type="number" step="0.01" defaultValue="0" /><button type="submit">Add line</button></form> : null}
+      <section className="vercent-table-wrap">
+        <table className="vercent-table"><thead><tr><th>Date</th><th>Description</th><th>Debit</th><th>Credit</th><th>Matched</th><th>Action</th></tr></thead><tbody>{reconciliation.lines.map((line) => <tr key={line.id}><td>{line.transactionDate}</td><td>{line.description}<br /><small>{line.referenceNumber ?? ""}</small></td><td>{line.debitAmount.toLocaleString("en-IN")}</td><td>{line.creditAmount.toLocaleString("en-IN")}</td><td>{line.matchedJournalEntryLineId ? "Yes" : "No"}</td><td>{reconciliation.status === "DRAFT" ? line.matchedJournalEntryLineId ? <form action={unmatchBankReconciliationLineAction.bind(null, reconciliation.id, line.id)}><button type="submit">Unmatch</button></form> : <form action={matchBankReconciliationLineAction.bind(null, reconciliation.id, line.id)}><select name="journalEntryLineId" required>{candidates.rows.filter((candidate) => candidate.amount === line.amount).map((candidate) => <option key={candidate.journalEntryLineId} value={candidate.journalEntryLineId}>{candidate.postingDate} {candidate.journalNumber} {candidate.amount.toLocaleString("en-IN")}</option>)}</select><button type="submit">Match</button></form> : "-"}</td></tr>)}</tbody></table>
+      </section>
+    </main>
+  );
+}

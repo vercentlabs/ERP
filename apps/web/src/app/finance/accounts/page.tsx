@@ -7,7 +7,7 @@ export default async function AccountsPage({ searchParams }: { searchParams?: Re
   const accounts = await listAccounts(params);
   return (
     <main className="page-shell">
-      <ModuleHeader title="Chart of Accounts" eyebrow="Finance" description="Maintain account codes used by manual journals. Sales invoices do not post accounting yet." actions={<Link className="vercent-button" href="/finance/accounts/new">Create account</Link>} />
+      <ModuleHeader title="Chart of Accounts" eyebrow="Finance" description="Maintain account codes used by manual journals, invoice posting, receipts, refunds, and bank reconciliation." actions={<Link className="vercent-button" href="/finance/accounts/new">Create account</Link>} />
       <form className="vercent-toolbar">
         <input name="search" placeholder="Search account" defaultValue={params.search ?? ""} />
         <select name="type" defaultValue={params.type ?? ""}><option value="">All types</option><option>ASSET</option><option>LIABILITY</option><option>EQUITY</option><option>INCOME</option><option>EXPENSE</option></select>

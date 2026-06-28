@@ -23,6 +23,7 @@ const steps = [
   "smoke:sales-credit-notes",
   "smoke:sales-debit-notes",
   "smoke:customer-refunds",
+  "smoke:bank-reconciliation",
 ];
 
 function runStep(script: string) {
