@@ -18,7 +18,7 @@ const lineTable = "sales_credit_note_lines";
 type NoteRow = {
   id: string; tenant_id: string; company_id: string | null; branch_id: string | null; credit_note_number: string; sales_invoice_id: string; customer_id: string; party_id: string | null;
   credit_note_date: Date | string; posting_date: Date | string | null; status: SalesCreditNoteStatus; reason: string | null; return_to_stock: boolean; warehouse_id: string | null;
-  currency: string; exchange_rate: string | number; subtotal_amount: string | number; discount_amount: string | number; taxable_amount: string | number; tax_amount: string | number; total_amount: string | number;
+  currency: string; exchange_rate: string | number; subtotal_amount: string | number; discount_amount: string | number; taxable_amount: string | number; tax_amount: string | number; total_amount: string | number; allocated_amount: string | number; refunded_amount: string | number;
   journal_entry_id: string | null; posted_at: Date | string | null; cancelled_at: Date | string | null; notes: string | null; created_at: Date | string; updated_at: Date | string; deleted_at: Date | string | null;
 };
 type LineRow = {
@@ -63,11 +63,14 @@ function mapLine(row: LineRow): SalesCreditNoteLineRecord {
 }
 
 function mapNote(row: NoteRow, lines: SalesCreditNoteLineRecord[] = []): SalesCreditNoteRecord {
+  const totalAmount = money(row.total_amount);
+  const allocatedAmount = money(row.allocated_amount);
+  const refundedAmount = money(row.refunded_amount);
   return {
     id: row.id, tenantId: row.tenant_id, companyId: row.company_id ?? undefined, branchId: row.branch_id ?? undefined, creditNoteNumber: row.credit_note_number, salesInvoiceId: row.sales_invoice_id,
     customerId: row.customer_id, partyId: row.party_id ?? undefined, creditNoteDate: toDate(row.credit_note_date)!, postingDate: toDate(row.posting_date), status: row.status, reason: row.reason ?? undefined,
     returnToStock: row.return_to_stock, warehouseId: row.warehouse_id ?? undefined, currency: row.currency, exchangeRate: money(row.exchange_rate), subtotalAmount: money(row.subtotal_amount), discountAmount: money(row.discount_amount),
-    taxableAmount: money(row.taxable_amount), taxAmount: money(row.tax_amount), totalAmount: money(row.total_amount), journalEntryId: row.journal_entry_id ?? undefined, postedAt: toIso(row.posted_at),
+    taxableAmount: money(row.taxable_amount), taxAmount: money(row.tax_amount), totalAmount, allocatedAmount, refundedAmount, availableAmount: roundMoney(totalAmount - allocatedAmount - refundedAmount), journalEntryId: row.journal_entry_id ?? undefined, postedAt: toIso(row.posted_at),
     cancelledAt: toIso(row.cancelled_at), notes: row.notes ?? undefined, createdAt: toIso(row.created_at)!, updatedAt: toIso(row.updated_at)!, deletedAt: toIso(row.deleted_at), lines,
   };
 }
@@ -118,7 +121,7 @@ export function createSalesCreditNotesRepository(database?: Knex): SalesCreditNo
           id: randomUUID(), tenant_id: input.tenantId, company_id: toNullable(input.companyId), branch_id: toNullable(input.branchId), credit_note_number: numberWithPrefix("SCN", input.creditNoteNumber),
           sales_invoice_id: input.salesInvoiceId, customer_id: input.customerId, party_id: toNullable(input.partyId), credit_note_date: input.creditNoteDate ?? new Date().toISOString().slice(0, 10), posting_date: toNullable(input.postingDate),
           status: "DRAFT", reason: toNullable(input.reason), return_to_stock: input.returnToStock ?? false, warehouse_id: toNullable(input.warehouseId), currency: input.currency, exchange_rate: input.exchangeRate,
-          subtotal_amount: totals.subtotalAmount, discount_amount: totals.discountAmount, taxable_amount: totals.taxableAmount, tax_amount: totals.taxAmount, total_amount: totals.totalAmount, notes: toNullable(input.notes),
+          subtotal_amount: totals.subtotalAmount, discount_amount: totals.discountAmount, taxable_amount: totals.taxableAmount, tax_amount: totals.taxAmount, total_amount: totals.totalAmount, allocated_amount: 0, refunded_amount: 0, notes: toNullable(input.notes),
         }).returning("*");
         await insertLines(trx, input.tenantId, row.id, lines.map((line) => ({ ...line, creditNoteId: row.id })));
         return row;
@@ -168,6 +171,32 @@ export function createSalesCreditNotesRepository(database?: Knex): SalesCreditNo
       const connection = db();
       const [row] = await connection<NoteRow>(noteTable).where({ tenant_id: tenantId, id, status: "DRAFT" }).whereNull("deleted_at").update(compact({ status: "POSTED", journal_entry_id: journalEntryId, posting_date: postingDate, posted_at: connection.fn.now(), updated_at: connection.fn.now() })).returning("*");
       return row ? (await attachLines(connection, [row]))[0] : undefined;
+    },
+    async applyCreditNoteAllocation(tenantId, id, amount) {
+      const connection = db();
+      const value = roundMoney(amount);
+      const [row] = await connection<NoteRow>(noteTable)
+        .where({ tenant_id: tenantId, id, status: "POSTED" })
+        .whereNull("deleted_at")
+        .whereRaw("round((total_amount - allocated_amount - refunded_amount)::numeric, 2) >= ?", [value])
+        .update({ allocated_amount: connection.raw("round((allocated_amount + ?)::numeric, 2)", [value]), updated_at: connection.fn.now() })
+        .returning("*");
+      return row ? (await attachLines(connection, [row]))[0] : undefined;
+    },
+    async applyCreditNoteRefund(tenantId, id, amount) {
+      const connection = db();
+      const value = roundMoney(amount);
+      const [row] = await connection<NoteRow>(noteTable)
+        .where({ tenant_id: tenantId, id, status: "POSTED" })
+        .whereNull("deleted_at")
+        .whereRaw("round((total_amount - allocated_amount - refunded_amount)::numeric, 2) >= ?", [value])
+        .update({ refunded_amount: connection.raw("round((refunded_amount + ?)::numeric, 2)", [value]), updated_at: connection.fn.now() })
+        .returning("*");
+      return row ? (await attachLines(connection, [row]))[0] : undefined;
+    },
+    async getCreditNoteAvailableAmount(tenantId, id) {
+      const row = await db()<NoteRow>(noteTable).where({ tenant_id: tenantId, id }).whereNull("deleted_at").first();
+      return row ? roundMoney(money(row.total_amount) - money(row.allocated_amount) - money(row.refunded_amount)) : undefined;
     },
     async cancelDraftSalesCreditNote(tenantId, id) {
       const connection = db(); const [row] = await connection<NoteRow>(noteTable).where({ tenant_id: tenantId, id, status: "DRAFT" }).whereNull("deleted_at").update({ status: "CANCELLED", cancelled_at: connection.fn.now(), updated_at: connection.fn.now() }).returning("*");

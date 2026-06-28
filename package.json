@@ -30,6 +30,7 @@
     "smoke:customer-receipts": "tsx scripts/devex/smoke-customer-receipts.ts",
     "smoke:sales-credit-notes": "tsx scripts/devex/smoke-sales-credit-notes.ts",
     "smoke:sales-debit-notes": "tsx scripts/devex/smoke-sales-debit-notes.ts",
+    "smoke:customer-refunds": "tsx scripts/devex/smoke-customer-refunds.ts",
     "smoke:finance-accounting": "tsx scripts/devex/smoke-finance-accounting.ts",
     "smoke:sales-orders": "tsx scripts/devex/smoke-sales-orders.ts",
     "smoke:sales-quotations": "tsx scripts/devex/smoke-sales-quotations.ts",

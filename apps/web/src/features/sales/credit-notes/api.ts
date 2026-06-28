@@ -4,7 +4,7 @@ export type SalesCreditNoteLine = { id: string; salesInvoiceLineId?: string; lin
 export type SalesCreditNote = {
   id: string; creditNoteNumber: string; salesInvoiceId: string; customerId: string; creditNoteDate: string; postingDate?: string; status: SalesCreditNoteStatus;
   reason?: string; returnToStock: boolean; warehouseId?: string; currency: string; subtotalAmount: number; discountAmount: number; taxableAmount: number; taxAmount: number; totalAmount: number;
-  journalEntryId?: string; postedAt?: string; cancelledAt?: string; notes?: string; lines: SalesCreditNoteLine[];
+  allocatedAmount: number; refundedAmount: number; availableAmount: number; journalEntryId?: string; postedAt?: string; cancelledAt?: string; notes?: string; lines: SalesCreditNoteLine[];
 };
 export type SalesCreditNoteStats = { draftValue: number; postedValue: number; cancelledValue: number };
 export type SalesCreditNoteListParams = { search?: string; status?: string; customerId?: string; salesInvoiceId?: string; page?: string; pageSize?: string };

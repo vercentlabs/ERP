@@ -50,6 +50,9 @@ export type SalesCreditNoteRecord = {
   taxableAmount: number;
   taxAmount: number;
   totalAmount: number;
+  allocatedAmount: number;
+  refundedAmount: number;
+  availableAmount: number;
   journalEntryId?: string;
   postedAt?: string;
   cancelledAt?: string;
@@ -132,6 +135,9 @@ export type SalesCreditNoteRepository = {
   updateSalesCreditNote(tenantId: string, id: string, input: SalesCreditNoteUpdateInput, lines: SalesCreditNoteLineRecord[] | undefined, totals: SalesCreditNoteTotals | undefined, actorId?: string): Promise<SalesCreditNoteRecord | undefined>;
   softDeleteSalesCreditNote(tenantId: string, id: string, actorId?: string): Promise<SalesCreditNoteRecord | undefined>;
   postSalesCreditNote(tenantId: string, id: string, journalEntryId: string, postingDate?: string, actorId?: string): Promise<SalesCreditNoteRecord | undefined>;
+  applyCreditNoteAllocation(tenantId: string, id: string, amount: number, actorId?: string): Promise<SalesCreditNoteRecord | undefined>;
+  applyCreditNoteRefund(tenantId: string, id: string, amount: number, actorId?: string): Promise<SalesCreditNoteRecord | undefined>;
+  getCreditNoteAvailableAmount(tenantId: string, id: string): Promise<number | undefined>;
   cancelDraftSalesCreditNote(tenantId: string, id: string, actorId?: string): Promise<SalesCreditNoteRecord | undefined>;
   getSalesCreditNoteLines(tenantId: string, id: string): Promise<SalesCreditNoteLineRecord[]>;
   getSalesCreditNoteStats(tenantId: string, filters?: Pick<SalesCreditNoteListRequest, "companyId" | "branchId">): Promise<SalesCreditNoteStats>;

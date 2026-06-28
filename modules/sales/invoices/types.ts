@@ -165,6 +165,7 @@ export type SalesInvoiceRepository = {
   applySalesInvoicePayment(tenantId: string, id: string, allocatedAmount: number, actorId?: string): Promise<SalesInvoiceRecord | undefined>;
   applySalesInvoiceCredit(tenantId: string, id: string, creditedAmount: number, actorId?: string): Promise<SalesInvoiceRecord | undefined>;
   applySalesInvoiceDebit(tenantId: string, id: string, debitedAmount: number, actorId?: string): Promise<SalesInvoiceRecord | undefined>;
+  applySalesInvoiceCreditAllocation(tenantId: string, id: string, allocatedAmount: number, actorId?: string): Promise<SalesInvoiceRecord | undefined>;
   getSalesInvoiceLines(tenantId: string, invoiceId: string): Promise<SalesInvoiceLineRecord[]>;
   getSalesInvoiceAccountingStatus(tenantId: string, id: string): Promise<Pick<SalesInvoiceRecord, "id" | "tenantId" | "companyId" | "branchId" | "invoiceNumber" | "accountingStatus" | "journalEntryId" | "accountingPostedAt"> | undefined>;
   getSalesInvoiceJournalEntry(tenantId: string, id: string): Promise<string | undefined>;

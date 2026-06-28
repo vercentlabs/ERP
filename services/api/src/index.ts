@@ -10,10 +10,12 @@ import { salesOrdersService } from "../../../modules/sales/sales-orders/service"
 import { deliveryNotesService } from "../../../modules/sales/delivery-notes/service";
 import { salesInvoicesService } from "../../../modules/sales/invoices/service";
 import { salesCreditNotesService } from "../../../modules/sales/credit-notes/service";
+import { creditNoteAllocationsService } from "../../../modules/sales/credit-note-allocations/service";
 import { salesDebitNotesService } from "../../../modules/sales/debit-notes/service";
 import { inventoryStockService } from "../../../modules/inventory/stock-ledger/service";
 import { accountingService } from "../../../modules/finance/accounting/service";
 import { customerReceiptsService } from "../../../modules/finance/customer-receipts/service";
+import { customerRefundsService } from "../../../modules/finance/customer-refunds/service";
 import { generalLedgerService } from "../../../modules/finance/general-ledger/service";
 import { payrollRunsService } from "../../../modules/payroll/payroll-runs/service";
 import { ticketsService } from "../../../modules/helpdesk/tickets/service";
@@ -319,6 +321,24 @@ function customerReceiptListInput(url: URL, tenantId: string) {
     paymentMethod: url.searchParams.get("paymentMethod") ?? undefined,
     receiptDateFrom: url.searchParams.get("receiptDateFrom") ?? undefined,
     receiptDateTo: url.searchParams.get("receiptDateTo") ?? undefined,
+    postingDateFrom: url.searchParams.get("postingDateFrom") ?? undefined,
+    postingDateTo: url.searchParams.get("postingDateTo") ?? undefined,
+    sortBy: url.searchParams.get("sortBy") ?? undefined,
+    sortDirection: url.searchParams.get("sortDirection") ?? undefined,
+  };
+}
+
+function customerRefundListInput(url: URL, tenantId: string) {
+  return {
+    tenantId,
+    page: url.searchParams.get("page") ?? undefined,
+    pageSize: url.searchParams.get("pageSize") ?? undefined,
+    search: url.searchParams.get("search") ?? undefined,
+    status: url.searchParams.get("status") ?? undefined,
+    customerId: url.searchParams.get("customerId") ?? undefined,
+    paymentMethod: url.searchParams.get("paymentMethod") ?? undefined,
+    refundDateFrom: url.searchParams.get("refundDateFrom") ?? undefined,
+    refundDateTo: url.searchParams.get("refundDateTo") ?? undefined,
     postingDateFrom: url.searchParams.get("postingDateFrom") ?? undefined,
     postingDateTo: url.searchParams.get("postingDateTo") ?? undefined,
     sortBy: url.searchParams.get("sortBy") ?? undefined,
@@ -867,6 +887,7 @@ async function handleSalesInvoicesRequest(
   receiptsService: typeof customerReceiptsService,
   creditNotesService: typeof salesCreditNotesService,
   debitNotesService: typeof salesDebitNotesService,
+  allocationsService: typeof creditNoteAllocationsService,
   routeBase: "/api/sales/invoices" | "/api/accounting/invoices" = "/api/sales/invoices",
 ) {
   const context = actorContext(request, tenantId);
@@ -934,6 +955,10 @@ async function handleSalesInvoicesRequest(
     json(response, 200, await creditNotesService.getByInvoice(tenantId, id, context));
     return true;
   }
+  if (request.method === "GET" && action === "credit-allocations") {
+    json(response, 200, await allocationsService.getByInvoice(tenantId, id, context));
+    return true;
+  }
   if (request.method === "POST" && action === "create-credit-note") {
     json(response, 201, await creditNotesService.createFromInvoice(tenantId, id, await readJson(request), context));
     return true;
@@ -955,6 +980,8 @@ async function handleSalesCreditNotesRequest(
   url: URL,
   tenantId: string,
   service: typeof salesCreditNotesService,
+  allocationsService: typeof creditNoteAllocationsService,
+  refundsService: typeof customerRefundsService,
 ) {
   const context = actorContext(request, tenantId);
   const segments = url.pathname.split("/").filter(Boolean);
@@ -997,6 +1024,22 @@ async function handleSalesCreditNotesRequest(
     json(response, 200, await service.getLines(tenantId, id, context));
     return true;
   }
+  if (request.method === "POST" && action === "allocate") {
+    json(response, 201, await allocationsService.allocate({ tenantId, creditNoteId: id, ...(await readJson(request)) }, context));
+    return true;
+  }
+  if (request.method === "GET" && action === "allocations") {
+    json(response, 200, await allocationsService.getByCreditNote(tenantId, id, context));
+    return true;
+  }
+  if (request.method === "GET" && action === "refunds") {
+    json(response, 200, await refundsService.getByCreditNote(tenantId, id, context));
+    return true;
+  }
+  if (request.method === "POST" && action === "create-refund") {
+    json(response, 201, await refundsService.createFromCreditNote(tenantId, id, await readJson(request), context));
+    return true;
+  }
   return false;
 }
 
@@ -1006,6 +1049,7 @@ async function handleSalesDebitNotesRequest(
   url: URL,
   tenantId: string,
   service: typeof salesDebitNotesService,
+  allocationsService: typeof creditNoteAllocationsService,
 ) {
   const context = actorContext(request, tenantId);
   const segments = url.pathname.split("/").filter(Boolean);
@@ -1048,6 +1092,10 @@ async function handleSalesDebitNotesRequest(
     json(response, 200, await service.getLines(tenantId, id, context));
     return true;
   }
+  if (request.method === "GET" && action === "credit-allocations") {
+    json(response, 200, await allocationsService.getByDebitNote(tenantId, id, context));
+    return true;
+  }
   return false;
 }
 
@@ -1072,6 +1120,57 @@ async function handleCustomerReceiptsRequest(
   }
   if (request.method === "GET" && url.pathname === "/api/finance/customer-receipts/stats") {
     json(response, 200, await service.stats(customerReceiptListInput(url, tenantId), context));
+    return true;
+  }
+  if (!id) return false;
+  if (request.method === "GET" && !action) {
+    json(response, 200, await service.getById(tenantId, id, context));
+    return true;
+  }
+  if (request.method === "PATCH" && !action) {
+    json(response, 200, await service.update(tenantId, id, await readJson(request), context));
+    return true;
+  }
+  if (request.method === "DELETE" && !action) {
+    json(response, 200, await service.softDelete(tenantId, id, context));
+    return true;
+  }
+  if (request.method === "POST" && action === "post") {
+    json(response, 200, await service.post(tenantId, id, await readJson(request), context));
+    return true;
+  }
+  if (request.method === "POST" && action === "cancel") {
+    json(response, 200, await service.cancel(tenantId, id, context));
+    return true;
+  }
+  if (request.method === "GET" && action === "allocations") {
+    json(response, 200, await service.getAllocations(tenantId, id, context));
+    return true;
+  }
+  return false;
+}
+
+async function handleCustomerRefundsRequest(
+  request: IncomingMessage,
+  response: ServerResponse,
+  url: URL,
+  tenantId: string,
+  service: typeof customerRefundsService,
+) {
+  const context = actorContext(request, tenantId);
+  const segments = url.pathname.split("/").filter(Boolean);
+  const id = segments[3];
+  const action = segments[4];
+  if (request.method === "GET" && url.pathname === "/api/finance/customer-refunds") {
+    json(response, 200, await service.list(customerRefundListInput(url, tenantId), context));
+    return true;
+  }
+  if (request.method === "POST" && url.pathname === "/api/finance/customer-refunds") {
+    json(response, 201, await service.create({ tenantId, ...(await readJson(request)) }, context));
+    return true;
+  }
+  if (request.method === "GET" && url.pathname === "/api/finance/customer-refunds/stats") {
+    json(response, 200, await service.stats(customerRefundListInput(url, tenantId), context));
     return true;
   }
   if (!id) return false;
@@ -1338,8 +1437,10 @@ export function createApiService(
     deliveryNotes?: typeof deliveryNotesService;
     salesInvoices?: typeof salesInvoicesService;
     salesCreditNotes?: typeof salesCreditNotesService;
+    creditNoteAllocations?: typeof creditNoteAllocationsService;
     salesDebitNotes?: typeof salesDebitNotesService;
     customerReceipts?: typeof customerReceiptsService;
+    customerRefunds?: typeof customerRefundsService;
     inventoryStock?: typeof inventoryStockService;
     accounting?: typeof accountingService;
   } = {},
@@ -1352,8 +1453,10 @@ export function createApiService(
   const deliveryNoteService = options.deliveryNotes ?? deliveryNotesService;
   const salesInvoiceService = options.salesInvoices ?? salesInvoicesService;
   const salesCreditNoteService = options.salesCreditNotes ?? salesCreditNotesService;
+  const creditNoteAllocationService = options.creditNoteAllocations ?? creditNoteAllocationsService;
   const salesDebitNoteService = options.salesDebitNotes ?? salesDebitNotesService;
   const customerReceiptService = options.customerReceipts ?? customerReceiptsService;
+  const customerRefundService = options.customerRefunds ?? customerRefundsService;
   const inventoryService = options.inventoryStock ?? inventoryStockService;
   const financeAccountingService = options.accounting ?? accountingService;
 
@@ -1424,23 +1527,27 @@ export function createApiService(
       }
 
       if (url.pathname === "/api/sales/invoices" || url.pathname.startsWith("/api/sales/invoices/")) {
-        if (await handleSalesInvoicesRequest(request, response, url, tenantId, salesInvoiceService, customerReceiptService, salesCreditNoteService, salesDebitNoteService)) return;
+        if (await handleSalesInvoicesRequest(request, response, url, tenantId, salesInvoiceService, customerReceiptService, salesCreditNoteService, salesDebitNoteService, creditNoteAllocationService)) return;
       }
 
       if (url.pathname === "/api/accounting/invoices" || url.pathname.startsWith("/api/accounting/invoices/")) {
-        if (await handleSalesInvoicesRequest(request, response, url, tenantId, salesInvoiceService, customerReceiptService, salesCreditNoteService, salesDebitNoteService, "/api/accounting/invoices")) return;
+        if (await handleSalesInvoicesRequest(request, response, url, tenantId, salesInvoiceService, customerReceiptService, salesCreditNoteService, salesDebitNoteService, creditNoteAllocationService, "/api/accounting/invoices")) return;
       }
 
       if (url.pathname === "/api/sales/credit-notes" || url.pathname.startsWith("/api/sales/credit-notes/")) {
-        if (await handleSalesCreditNotesRequest(request, response, url, tenantId, salesCreditNoteService)) return;
+        if (await handleSalesCreditNotesRequest(request, response, url, tenantId, salesCreditNoteService, creditNoteAllocationService, customerRefundService)) return;
       }
 
       if (url.pathname === "/api/sales/debit-notes" || url.pathname.startsWith("/api/sales/debit-notes/")) {
-        if (await handleSalesDebitNotesRequest(request, response, url, tenantId, salesDebitNoteService)) return;
+        if (await handleSalesDebitNotesRequest(request, response, url, tenantId, salesDebitNoteService, creditNoteAllocationService)) return;
       }
 
       if (url.pathname === "/api/finance/customer-receipts" || url.pathname.startsWith("/api/finance/customer-receipts/")) {
         if (await handleCustomerReceiptsRequest(request, response, url, tenantId, customerReceiptService)) return;
+      }
+
+      if (url.pathname === "/api/finance/customer-refunds" || url.pathname.startsWith("/api/finance/customer-refunds/")) {
+        if (await handleCustomerRefundsRequest(request, response, url, tenantId, customerRefundService)) return;
       }
 
       if (url.pathname === "/api/finance/accounting/settings" || url.pathname === "/api/finance/account-groups" || url.pathname.startsWith("/api/finance/account-groups/") || url.pathname === "/api/finance/accounts" || url.pathname.startsWith("/api/finance/accounts/") || url.pathname === "/api/finance/fiscal-years" || url.pathname.startsWith("/api/finance/fiscal-years/") || url.pathname === "/api/finance/journal-entries" || url.pathname.startsWith("/api/finance/journal-entries/") || url.pathname === "/api/finance/reports/trial-balance") {

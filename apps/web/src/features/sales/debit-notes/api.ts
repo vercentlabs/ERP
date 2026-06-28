@@ -3,7 +3,7 @@ export type PageResult<T> = { rows: T[]; total: number; page: number; pageSize: 
 export type SalesDebitNoteLine = { id: string; salesInvoiceLineId?: string; lineNumber: number; itemId: string; itemName: string; description?: string; quantity: number; uomId: string; unitAmount: number; taxableAmount: number; taxRate: number; taxAmount: number; lineTotal: number };
 export type SalesDebitNote = {
   id: string; debitNoteNumber: string; salesInvoiceId: string; customerId: string; debitNoteDate: string; postingDate?: string; status: SalesDebitNoteStatus; accountingStatus: "NOT_POSTED" | "POSTED";
-  reason?: string; subtotalAmount: number; taxableAmount: number; taxAmount: number; totalAmount: number; journalEntryId?: string; postedAt?: string; cancelledAt?: string; notes?: string; lines: SalesDebitNoteLine[];
+  reason?: string; subtotalAmount: number; taxableAmount: number; taxAmount: number; totalAmount: number; settledAmount: number; amountDue: number; journalEntryId?: string; postedAt?: string; cancelledAt?: string; notes?: string; lines: SalesDebitNoteLine[];
 };
 export type SalesDebitNoteStats = { draftValue: number; postedValue: number; cancelledValue: number };
 export type SalesDebitNoteListParams = { search?: string; status?: string; accountingStatus?: string; customerId?: string; salesInvoiceId?: string; page?: string; pageSize?: string };

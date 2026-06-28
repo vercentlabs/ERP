@@ -18,7 +18,7 @@ const lineTable = "sales_debit_note_lines";
 type NoteRow = {
   id: string; tenant_id: string; company_id: string | null; branch_id: string | null; debit_note_number: string; sales_invoice_id: string; customer_id: string; party_id: string | null;
   debit_note_date: Date | string; posting_date: Date | string | null; status: SalesDebitNoteStatus; accounting_status: SalesDebitNoteRecord["accountingStatus"]; journal_entry_id: string | null;
-  subtotal_amount: string | number; taxable_amount: string | number; tax_amount: string | number; total_amount: string | number; reason: string | null; notes: string | null;
+  subtotal_amount: string | number; taxable_amount: string | number; tax_amount: string | number; total_amount: string | number; settled_amount: string | number; amount_due: string | number; reason: string | null; notes: string | null;
   posted_at: Date | string | null; cancelled_at: Date | string | null; created_at: Date | string; updated_at: Date | string; deleted_at: Date | string | null;
 };
 type LineRow = {
@@ -89,6 +89,8 @@ function mapNote(row: NoteRow, lines: SalesDebitNoteLineRecord[] = []): SalesDeb
     taxableAmount: money(row.taxable_amount),
     taxAmount: money(row.tax_amount),
     totalAmount: money(row.total_amount),
+    settledAmount: money(row.settled_amount),
+    amountDue: money(row.amount_due),
     reason: row.reason ?? undefined,
     notes: row.notes ?? undefined,
     postedAt: toIso(row.posted_at),
@@ -171,6 +173,8 @@ export function createSalesDebitNotesRepository(database?: Knex): SalesDebitNote
           taxable_amount: totals.taxableAmount,
           tax_amount: totals.taxAmount,
           total_amount: totals.totalAmount,
+          settled_amount: 0,
+          amount_due: totals.totalAmount,
           reason: toNullable(input.reason),
           notes: toNullable(input.notes),
         }).returning("*");
@@ -236,6 +240,21 @@ export function createSalesDebitNotesRepository(database?: Knex): SalesDebitNote
     async postSalesDebitNote(tenantId, id, journalEntryId, postingDate) {
       const connection = db();
       const [row] = await connection<NoteRow>(noteTable).where({ tenant_id: tenantId, id, status: "DRAFT", accounting_status: "NOT_POSTED" }).whereNull("deleted_at").update(compact({ status: "POSTED", accounting_status: "POSTED", journal_entry_id: journalEntryId, posting_date: postingDate, posted_at: connection.fn.now(), updated_at: connection.fn.now() })).returning("*");
+      return row ? (await attachLines(connection, [row]))[0] : undefined;
+    },
+    async applySalesDebitNoteCreditAllocation(tenantId, id, amount) {
+      const connection = db();
+      const value = roundMoney(amount);
+      const [row] = await connection<NoteRow>(noteTable)
+        .where({ tenant_id: tenantId, id, status: "POSTED" })
+        .whereNull("deleted_at")
+        .where("amount_due", ">=", value)
+        .update({
+          settled_amount: connection.raw("round((settled_amount + ?)::numeric, 2)", [value]),
+          amount_due: connection.raw("round((amount_due - ?)::numeric, 2)", [value]),
+          updated_at: connection.fn.now(),
+        })
+        .returning("*");
       return row ? (await attachLines(connection, [row]))[0] : undefined;
     },
     async cancelDraftSalesDebitNote(tenantId, id) {

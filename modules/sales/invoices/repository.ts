@@ -247,6 +247,21 @@ export function createSalesInvoicesRepository(database?: Knex): SalesInvoiceRepo
         .returning("*");
       return row ? (await attachLines(connection, [row]))[0] : undefined;
     },
+    async applySalesInvoiceCreditAllocation(tenantId, id, allocatedAmount) {
+      const connection = db();
+      const amount = roundMoney(allocatedAmount);
+      const [row] = await connection<InvoiceRow>(invoiceTable)
+        .where({ tenant_id: tenantId, id, status: "ISSUED", accounting_status: "POSTED" })
+        .whereNull("deleted_at")
+        .where("amount_due", ">=", amount)
+        .update({
+          amount_due: connection.raw("round((amount_due - ?)::numeric, 2)", [amount]),
+          payment_status: connection.raw("case when round((amount_due - ?)::numeric, 2) = 0 then 'PAID' when amount_paid > 0 then 'PARTIALLY_PAID' else 'UNPAID' end", [amount]),
+          updated_at: connection.fn.now(),
+        })
+        .returning("*");
+      return row ? (await attachLines(connection, [row]))[0] : undefined;
+    },
     async getSalesInvoiceLines(tenantId, invoiceId) { return (await db()<LineRow>(lineTable).where({ tenant_id: tenantId, invoice_id: invoiceId }).orderBy("line_number", "asc")).map(mapLineRow); },
     async getSalesInvoiceAccountingStatus(tenantId, id) {
       const row = await db()<InvoiceRow>(invoiceTable).where({ tenant_id: tenantId, id }).whereNull("deleted_at").first();

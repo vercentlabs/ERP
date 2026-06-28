@@ -44,6 +44,8 @@ export type SalesDebitNoteRecord = {
   taxableAmount: number;
   taxAmount: number;
   totalAmount: number;
+  settledAmount: number;
+  amountDue: number;
   reason?: string;
   notes?: string;
   postedAt?: string;
@@ -122,6 +124,7 @@ export type SalesDebitNoteRepository = {
   updateSalesDebitNote(tenantId: string, id: string, input: SalesDebitNoteUpdateInput, lines: SalesDebitNoteLineRecord[] | undefined, totals: SalesDebitNoteTotals | undefined, actorId?: string): Promise<SalesDebitNoteRecord | undefined>;
   softDeleteSalesDebitNote(tenantId: string, id: string, actorId?: string): Promise<SalesDebitNoteRecord | undefined>;
   postSalesDebitNote(tenantId: string, id: string, journalEntryId: string, postingDate?: string, actorId?: string): Promise<SalesDebitNoteRecord | undefined>;
+  applySalesDebitNoteCreditAllocation(tenantId: string, id: string, amount: number, actorId?: string): Promise<SalesDebitNoteRecord | undefined>;
   cancelDraftSalesDebitNote(tenantId: string, id: string, actorId?: string): Promise<SalesDebitNoteRecord | undefined>;
   getSalesDebitNoteLines(tenantId: string, id: string): Promise<SalesDebitNoteLineRecord[]>;
   getSalesDebitNoteStats(tenantId: string, filters?: Pick<SalesDebitNoteListRequest, "companyId" | "branchId">): Promise<SalesDebitNoteStats>;
